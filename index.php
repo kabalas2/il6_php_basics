@@ -68,11 +68,11 @@ Eilutes
 
 // = + - / * %;
 
-$pvm = 21;
+$pvm = 23;
 
 $priceWithTax = $productPrice * 1+$pvm / 100;
 
-echo $priceWithTax;
+//echo $priceWithTax;
 
 
 
