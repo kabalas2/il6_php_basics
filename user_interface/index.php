@@ -2,7 +2,7 @@
  <head><title>Our website</title></head>
 <body>
     <h2>Prisijungti</h2>
-    <form action="login.php">
+    <form action="login.php" method="post">
         <input type="email" name="email" placeholder="john@gmail.com">
         <input type="password" name="password" placeholder="********">
         <input type="submit" value="Prisijungti">
@@ -21,3 +21,6 @@
     </form>
 </body>
 </html>
+Registruojantis pachekinti, ar emailas laisvas.
+perkurti registracija, kad saugotu nickname, jai nicknamas jau yra, prideti skaiciu gale.
+jei vartotojas nepazysmi sutikimo su salygomis, jo neregistruoti.
