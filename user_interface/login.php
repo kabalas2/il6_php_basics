@@ -12,18 +12,18 @@ $users = readFromCsv('users.csv');
 
 
 $login = false;
-foreach ($users as $user){
+foreach ($users as $user) {
 
 
-    if($password === $user[3] && $email === $user[2]){
+    if ($password === $user[PASWORD_FIELD_KEY] && $email === $user[EMAIL_FIELD_KEY]) {
         $login = true;
         break;
     }
 }
 
 
-if($login){
+if ($login) {
     echo 'prisijungete';
-}else{
+} else {
     echo 'wrong email';
 }
