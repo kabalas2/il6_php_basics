@@ -19,3 +19,16 @@ echo '<br>';
 
 echo '<input type="submit" value="Play!!!" name="play">';
 echo '</form>';
+
+$results = getResults();
+echo '<table>';
+    foreach ($results as $result){
+        if(!empty($result)){
+            echo '<tr>';
+            echo '<td>'.$result[0].'</td>';
+            echo '<td>'.$result[1].'</td>';
+            echo '<td>'.$result[2].'</td>';
+            echo '</tr>';
+        }
+    }
+echo '</table>';

@@ -17,15 +17,37 @@ if (isset($_POST['play'])) {
     echo '<table>';
     echo '<tr><td ><img width="200" src="image/' . $playerChoice . '.png"></td><td>VS</td><td ><img width="200" src="image/' . $pcChoice . '.png"></td></tr>';
     echo '</table>';
+    // 1 player choice, 2 player coice, result
+    $result = null;
+
     if ($playerChoice == $pcChoice) {
         echo 'Lygiosios';
+        $result = 'draw';
     } elseif ($playerChoice == TOOL_ROCK && $pcChoice == TOOL_SCISSORS) {
         echo 'Laimejote';
+        $result = 'win';
     } elseif ($playerChoice == TOOL_PAPER && $pcChoice == TOOL_ROCK) {
         echo 'Laimejote';
+        $result = 'win';
     } elseif ($playerChoice == TOOL_SCISSORS && $pcChoice = TOOL_PAPER) {
         echo 'Laimejote';
+        $result = 'win';
     } else {
+        $result = 'lost';
         echo 'Pralaimejote';
     }
+
+    $file = fopen('history.csv', 'a');
+    fputcsv($file,[$playerChoice, $pcChoice, $result]);
+    fclose($file);
+}
+
+function getResults(){
+    $file = fopen('history.csv', 'r');
+    $data = [];
+    while (!feof($file)){
+        $data[] = fgetcsv($file);
+    }
+
+    return $data;
 }
