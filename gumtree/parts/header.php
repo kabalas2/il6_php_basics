@@ -9,3 +9,4 @@
         <li><a href="catalog.php">All ads!</a></li>
     </ul>
 </div>
+<div class="content">
