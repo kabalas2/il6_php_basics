@@ -31,3 +31,35 @@ echo '</div>';
 
 ?>
 <?php include 'parts/footer.php'; ?>
+
+
+<?php
+/*
+  * Pasiimti ID is geto +
+  * pasiimti duomenis is DB pagal id
+  *     prisijungti prie db +
+  *     sugeneruoti sql sakini +
+  *     gauti duomenis +
+  * Atvaizduoti duomenis +
+  */
+
+$id = $_GET['id'];
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbName = 'shop_lt';
+
+try {
+//mysql:host=localhost;dbname=shop_lt
+    $conn = new PDO("mysql:host=$servername;dbname=$dbName", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //echo "Connected successfully";
+} catch (PDOException $e) {
+    //echo "Connection failed: " . $e->getMessage();
+}
+
+$sql = "SELECT * FROM ads where id =".$id;
+$rez = $conn->query($sql);
+$ad = $rez->fetchAll();
+
+
