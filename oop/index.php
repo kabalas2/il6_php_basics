@@ -22,6 +22,14 @@ $data4 = [
     'placeholder' => '******'
 ];
 
+$data5 = [
+    'name' => 'city',
+    'options' => [
+        1 => 'Kaunas',
+        2 => 'Vilnius',
+    ]
+];
+
 $formLogin = new FormHelper('login.php', 'POST');
 $formRegister = new FormHelper('register.php', 'POST');
 
