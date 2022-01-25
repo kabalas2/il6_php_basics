@@ -29,6 +29,7 @@ $formRegister->input($data);
 $formRegister->input($data2);
 $formRegister->input($data3);
 $formRegister->input($data4);
+$formRegister->textArea('comment', 'Komentaras');
 
 $formLogin->input($data3);
 $formLogin->input($data4);

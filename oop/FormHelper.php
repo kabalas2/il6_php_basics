@@ -6,15 +6,15 @@ class FormHelper
 
     public function __construct($action, $method)
     {
-        $this->form = '<form action="'.$action.'" method="'.$method.'">';
+        $this->form = '<form action="' . $action . '" method="' . $method . '">';
     }
 
     /**
-    $data3 = [
-    'type' => 'email',
-    'name' => 'email',
-    'placeholder' => 'john@gmail.com'
-    ];
+     * $data3 = [
+     * 'type' => 'email',
+     * 'name' => 'email',
+     * 'placeholder' => 'john@gmail.com'
+     * ];
      */
 
 
@@ -32,7 +32,7 @@ class FormHelper
         foreach ($data as $attribute => $value) {
             // <form action="registration.php" method="POST"><input type="email" name="email"
             // placeholder="john@gmail.com";
-            $this->form .= $attribute.'="'.$value.'" ';
+            $this->form .= $attribute . '="' . $value . '" ';
         }
         $this->form .= ' >';
         // <form action="registration.php" method="POST"><input type="email" name="email"
@@ -41,9 +41,18 @@ class FormHelper
 
     }
 
-    public function getForm()
+    public function textArea($name, $placeholder)
+    {
+        $this->form .= '<textarea name="' . $name . '">' . $placeholder . '</textarea>';
+    }
+
+    public function select()
     {
 
+    }
+
+    public function getForm()
+    {
         // <form action="registration.php" method="POST"><input type="email" name="email"
         // placeholder="john@gmail.com" ><input type="password" name="password" placeholder="*****"></form>;
 
