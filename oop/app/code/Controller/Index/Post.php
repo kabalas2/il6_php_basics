@@ -2,6 +2,7 @@
 
 namespace Controller\Index;
 
+
 class Post{
 
 }
