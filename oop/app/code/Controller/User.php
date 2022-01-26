@@ -28,12 +28,12 @@ class User
         $form->input([
             'name' => 'password',
             'type' => 'password',
-            'placeholder' => '******'
+            'placeholder' => '* * * * * *'
         ]);
         $form->input([
             'name' => 'password2',
             'type' => 'password',
-            'placeholder' => '******2'
+            'placeholder' => '* *** **2'
         ]);
         $form->input([
             'name' => 'create',

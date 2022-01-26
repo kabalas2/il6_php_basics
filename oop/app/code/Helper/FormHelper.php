@@ -36,7 +36,7 @@ class FormHelper
             // placeholder="john@gmail.com";
             $this->form .= $attribute . '="' . $value . '" ';
         }
-        $this->form .= ' ><br>';
+        $this->form .= ' ><br><br>';
         // <form action="registration.php" method="POST"><input type="email" name="email"
         // placeholder="john@gmail.com" ><input type="password" name="password" placeholder="*****";
 
