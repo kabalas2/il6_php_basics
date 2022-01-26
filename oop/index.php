@@ -17,7 +17,7 @@ if (isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] !== '/') {
         $obj = new $class();
         if (method_exists($obj, $method)) {
             if (isset($path[2])) {
-                $obj->$method($path);
+                $obj->$method($path[2]);
             } else {
                 $obj->$method();
             }

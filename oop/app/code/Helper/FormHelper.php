@@ -1,5 +1,7 @@
 <?php
 
+namespace Helper;
+
 class FormHelper
 {
     private $form;
@@ -34,7 +36,7 @@ class FormHelper
             // placeholder="john@gmail.com";
             $this->form .= $attribute . '="' . $value . '" ';
         }
-        $this->form .= ' >';
+        $this->form .= ' ><br>';
         // <form action="registration.php" method="POST"><input type="email" name="email"
         // placeholder="john@gmail.com" ><input type="password" name="password" placeholder="*****";
 
