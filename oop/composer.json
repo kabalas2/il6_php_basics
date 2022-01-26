@@ -1,0 +1,17 @@
+{
+    "name": "arnoldas/skelbimai",
+    "description": "Dar vienas skelbimu portalas",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Arnoldas",
+            "email": "nikaflash@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "": "app/code"
+        }
+    },
+    "require": {}
+}
