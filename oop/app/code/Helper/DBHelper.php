@@ -13,7 +13,7 @@ class DBHelper
         $this->sql = '';
 
         try {
-            $this->conn = new PDO("mysql:host=".SERVERNAME.";dbname=".DB_NAME, DB_USER, DB_PASSWORD);
+            $this->conn = new PDO("mysql:host=" . SERVERNAME . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             //echo "Connected successfully";
         } catch (PDOException $e) {
@@ -23,28 +23,42 @@ class DBHelper
 
     public function select($fields = '*')
     {
-        $this->sql .= 'SELECT '.$fields.' ';
+        $this->sql .= 'SELECT ' . $fields . ' ';
         return $this;
     }
 
     public function from($table)
     {
-        $this->sql.= ' FROM '.$table.' ';
+        $this->sql .= ' FROM ' . $table . ' ';
         return $this;
     }
 
-    public function where($field, $value, $operator  = '=')
+    public function where($field, $value, $operator = '=')
     {
-        $this->sql .= ' WHERE '.$field.$operator.'"'.$value.'"';
+        $this->sql .= ' WHERE ' . $field . $operator . '"' . $value . '"';
         return $this;
     }
 
-    public function get(){
+    public function delete()
+    {
+        $this->sql .= 'DELETE ';
+        return $this;
+    }
+
+    public function get()
+    {
         $rez = $this->conn->query($this->sql);
         return $rez->fetchAll();
     }
 
-    public function getOne(){
+    public function exec()
+    {
+        $this->conn->query($this->sql);
+    }
+
+
+    public function getOne()
+    {
         $rez = $this->conn->query($this->sql);
         $data = $rez->fetchAll();
         return $data[0];
