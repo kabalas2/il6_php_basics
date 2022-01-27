@@ -1,6 +1,7 @@
 <?php
 
 include 'vendor/autoload.php';
+include 'config.php';
 
 if (isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] !== '/') {
     $path = trim($_SERVER['PATH_INFO'], '/');
@@ -9,9 +10,6 @@ if (isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] !== '/') {
     print_r($path);
     $class = ucfirst($path[0]);
     $method = $path[1];
-    //echo 'app/code/Controller/'.$class.'.php';
-
-//    $obj = new $class();
     $class = '\Controller\\' . $class;
     if (class_exists($class)) {
         $obj = new $class();
@@ -32,5 +30,3 @@ if (isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] !== '/') {
 } else {
     echo 'home page';
 }
-
-// domain.lt/controlleris/methodas/params
