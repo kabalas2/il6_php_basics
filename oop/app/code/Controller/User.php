@@ -42,7 +42,28 @@ class User
         ]);
 
         echo $form->getForm();
+    }
 
+    public function login()
+    {
+        $form = new FormHelper('*', 'POST');
+        $form->input([
+            'name' => 'email',
+            'type' => 'email',
+            'placeholder' => 'Email'
+        ]);
+        $form->input([
+            'name' => 'password',
+            'type' => 'password',
+            'placeholder' => '* * * * * *'
+        ]);
+        $form->input([
+            'name' => 'login',
+            'type' => 'submit',
+            'value' => 'login'
+        ]);
+
+        echo $form->getForm();
     }
 
 }
