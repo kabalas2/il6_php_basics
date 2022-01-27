@@ -4,6 +4,7 @@ namespace Controller;
 
 use Helper\FormHelper;
 use Helper\Validator;
+use Model\User as UserModel;
 
 class User
 {
@@ -71,7 +72,8 @@ class User
     {
         $passMatch = Validator::checkPassword($_POST['password'], $_POST['password2']);
         $isEmailValid = Validator::checkEmail($_POST['email']);
-        if($passMatch && $isEmailValid){
+        $isEmailUnic = UserModel::emailUnic($_POST['email']);
+        if($passMatch && $isEmailValid && $isEmailUnic){
 
         }
     }
