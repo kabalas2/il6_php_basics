@@ -138,7 +138,7 @@ class User
     public static function emailUnic($email)
     {
         $db = new DBHelper();
-        $rez = $db->select()->from('user')->where('email', $email)->get();
+        $rez = $db->select()->from('users')->where('email', $email)->get();
         return empty($rez);
     }
 

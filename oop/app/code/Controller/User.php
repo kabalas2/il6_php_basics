@@ -27,6 +27,16 @@ class User
             'placeholder' => 'Vardas'
         ]);
         $form->input([
+            'name' => 'last_name',
+            'type' => 'text',
+            'placeholder' => 'Pavarde'
+        ]);
+        $form->input([
+            'name' => 'phone',
+            'type' => 'text',
+            'placeholder' => '+3706*******'
+        ]);
+        $form->input([
             'name' => 'email',
             'type' => 'email',
             'placeholder' => 'Email'
@@ -79,10 +89,12 @@ class User
         $isEmailUnic = UserModel::emailUnic($_POST['email']);
         if($passMatch && $isEmailValid && $isEmailUnic){
             $user = new UserModel();
-
             $user->setName($_POST['name']);
-            $user->setLastName($_POST['name']);
+            $user->setLastName($_POST['last_name']);
+            $user->setPhone($_POST['phone']);
+            $user->setPassword(md5($_POST['password']));
             $user->setEmail($_POST['email']);
+            $user->setCityId(1);
             $user->save();
         }
     }
