@@ -2,6 +2,7 @@
 
 namespace Controller;
 
+use Helper\DBHelper;
 use Helper\FormHelper;
 use Helper\Validator;
 use Model\User as UserModel;
@@ -15,6 +16,14 @@ class User
 
     public function register()
     {
+
+        $db = new DBHelper();
+        $data = [
+            'name' => 'Arnodlas',
+            'lastName' => 'Turulis',
+            'email' => 'a@a.lt'
+        ];
+        $db->insert('table', $data);
         $form = new FormHelper('user/create', 'POST');
 
         $form->input([
@@ -74,7 +83,7 @@ class User
         $isEmailValid = Validator::checkEmail($_POST['email']);
         $isEmailUnic = UserModel::emailUnic($_POST['email']);
         if($passMatch && $isEmailValid && $isEmailUnic){
-
+            //create user;
         }
     }
 
