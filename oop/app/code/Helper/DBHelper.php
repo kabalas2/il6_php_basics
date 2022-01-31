@@ -72,6 +72,7 @@ class DBHelper
         $this->sql .= 'INSERT INTO ' . $table .
             ' (' . implode(',', array_keys($data)) . ')
              VALUES ("' . implode('","', $data) . '")';
+        return $this;
     }
 
     public function update()

@@ -18,12 +18,7 @@ class User
     {
 
         $db = new DBHelper();
-        $data = [
-            'name' => 'Arnodlas',
-            'lastName' => 'Turulis',
-            'email' => 'a@a.lt'
-        ];
-        $db->insert('table', $data);
+
         $form = new FormHelper('user/create', 'POST');
 
         $form->input([
@@ -83,7 +78,12 @@ class User
         $isEmailValid = Validator::checkEmail($_POST['email']);
         $isEmailUnic = UserModel::emailUnic($_POST['email']);
         if($passMatch && $isEmailValid && $isEmailUnic){
-            //create user;
+            $user = new UserModel();
+
+            $user->setName($_POST['name']);
+            $user->setLastName($_POST['name']);
+            $user->setEmail($_POST['email']);
+            $user->save();
         }
     }
 

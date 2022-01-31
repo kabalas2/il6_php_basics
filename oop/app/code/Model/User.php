@@ -3,6 +3,7 @@
 namespace Model;
 
 use Helper\DBHelper;
+use Helper\FormHelper;
 
 class User
 {
@@ -83,6 +84,54 @@ class User
     public function setCityId($id)
     {
         $this->cityId = $id;
+    }
+
+    public function save()
+    {
+        if (!isset($this->id)) {
+            $this->create();
+        } else {
+            $this->update();
+        }
+    }
+
+    private function create()
+    {
+        $data = [
+            'name' => $this->name,
+            'last_name' => $this->lastName,
+            'email' => $this->email,
+            'password' => $this->password,
+            'phone' => $this->phone,
+            'city_id' => $this->cityId
+        ];
+
+        $db = new DBHelper();
+        $db->insert('users', $data)->exec();
+    }
+
+    private function update()
+    {
+
+    }
+
+    public function load($id)
+    {
+        $db = new DBHelper();
+        $data = $db->select()->from('users')->where('id',$id)->getOne();
+        $this->id = $data['id'];
+        $this->name = $data['name'];
+        $this->lastName = $data['last_name'];
+        $this->phone = $data['phone'];
+        $this->email = $data['email'];
+        $this->password = $data['password'];
+        $this->cityId = $data['city_id'];
+    }
+
+    public function delete()
+    {
+        $db = new DBHelper();
+        $db->delete()->from('users')->where('id', $this->id)->exec();
     }
 
 
