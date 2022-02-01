@@ -17,8 +17,6 @@ class User
     public function register()
     {
 
-        $db = new DBHelper();
-
         $form = new FormHelper('user/create', 'POST');
 
         $form->input([

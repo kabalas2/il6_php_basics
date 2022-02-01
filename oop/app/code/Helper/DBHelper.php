@@ -75,9 +75,20 @@ class DBHelper
         return $this;
     }
 
-    public function update()
+    public function update($table, $data)
     {
+        $this->sql .= 'UPDATE ' . $table . ' SET ';
+        $values = [];
+        foreach ($data as $column => $value) {
+            $values[] = "$column = '$value'";
+        }
+        $this->sql .= implode(',', $values);
+        return $this;
+    }
 
+    public function limit($number)
+    {
+        $this->sql .= ' LIMIT ' . $number;
     }
 
 }
