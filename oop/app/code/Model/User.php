@@ -142,4 +142,23 @@ class User
         return empty($rez);
     }
 
+    public static function checkLoginCredentionals($email, $pass)
+    {
+        $db = new DBHelper();
+        $rez = $db
+            ->select('id')
+            ->from('users')
+            ->where('email', $email)
+            ->andWhere('password', $pass)
+            ->getOne();
+
+        if(isset($rez['id']) ){
+            return $rez['id'];
+        }else{
+            return false;
+        }
+        //return isset($rez['id']) ? $rez['id'] : false;
+    }
+
+
 }

@@ -39,6 +39,18 @@ class DBHelper
         return $this;
     }
 
+    public function andWhere($field, $value, $operator = '=')
+    {
+        $this->sql .= ' AND ' . $field . $operator . '"' . $value . '"';
+        return $this;
+    }
+
+    public function orWhere($field, $value, $operator = '=')
+    {
+        $this->sql .= ' OR ' . $field . $operator . '"' . $value . '"';
+        return $this;
+    }
+
     public function delete()
     {
         $this->sql .= 'DELETE ';
@@ -61,7 +73,12 @@ class DBHelper
     {
         $rez = $this->conn->query($this->sql);
         $data = $rez->fetchAll();
-        return $data[0];
+        if(!empty($data)){
+            return $data[0];
+        }else{
+            return [];
+        }
+
     }
 
     // name => Arnoldas,

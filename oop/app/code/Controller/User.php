@@ -97,4 +97,18 @@ class User
         }
     }
 
+    public function check()
+    {
+        $email = $_POST['email'];
+        $password = md5($_POST['password']);
+        $userId = UserModel::checkLoginCredentionals($email, $password);
+        if($userId){
+            $user = new UserModel();
+            $user->load($userId);
+        }else{
+            echo 'Something goes wrong';
+        }
+
+    }
+
 }
