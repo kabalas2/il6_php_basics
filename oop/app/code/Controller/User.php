@@ -5,6 +5,7 @@ namespace Controller;
 use Helper\DBHelper;
 use Helper\FormHelper;
 use Helper\Validator;
+use Helper\Url;
 use Model\City;
 use Model\User as UserModel;
 
@@ -67,6 +68,11 @@ class User
         echo $form->getForm();
     }
 
+    public function edit()
+    {
+
+    }
+
     public function login()
     {
         $form = new FormHelper('user/check', 'POST');
@@ -103,6 +109,9 @@ class User
             $user->setEmail($_POST['email']);
             $user->setCityId($_POST['city_id']);
             $user->save();
+            Url::redirect('user/login');
+        }else{
+            echo 'Patikrinkite duomenis';
         }
     }
 
@@ -116,8 +125,10 @@ class User
             $user->load($userId);
             $_SESSION['logged'] = true;
             $_SESSION['user_id'] = $userId;
+            $_SESSION['user'] = $user;
+            Url::redirect('/');
         } else {
-            echo 'Something goes wrong';
+           Url::redirect('user/login');
         }
     }
 
