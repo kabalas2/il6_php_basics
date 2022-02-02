@@ -54,10 +54,9 @@ class User
         $cities = City::getCities();
         $options = [];
         foreach ($cities as $city) {
-            $key = $city->getId();
-            $options[$key] = $city->getName();
+            $id = $city->getId();
+            $options[$id] = $city->getName();
         }
-        print_r($cities);
         $form->select(['name' => 'city_id', 'options' => $options]);
         $form->input([
             'name' => 'create',

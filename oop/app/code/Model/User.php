@@ -4,6 +4,7 @@ namespace Model;
 
 use Helper\DBHelper;
 use Helper\FormHelper;
+use Model\City;
 
 class User
 {
@@ -20,6 +21,8 @@ class User
     private $phone;
 
     private $cityId;
+
+    private $city;
 
     public function getId()
     {
@@ -81,6 +84,12 @@ class User
         return $this->cityId;
     }
 
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+
     public function setCityId($id)
     {
         $this->cityId = $id;
@@ -126,6 +135,9 @@ class User
         $this->email = $data['email'];
         $this->password = $data['password'];
         $this->cityId = $data['city_id'];
+        $city = new City();
+        $this->city = $city->load($this->cityId);
+        return $this;
     }
 
     public function delete()
@@ -159,6 +171,7 @@ class User
         }
         //return isset($rez['id']) ? $rez['id'] : false;
     }
+
 
 
 }
