@@ -114,10 +114,16 @@ class User
         if ($userId) {
             $user = new UserModel();
             $user->load($userId);
+            $_SESSION['logged'] = true;
+            $_SESSION['user_id'] = $userId;
         } else {
             echo 'Something goes wrong';
         }
+    }
 
+    public function logout()
+    {
+        session_destroy();
     }
 
 }

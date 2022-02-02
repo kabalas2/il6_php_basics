@@ -2,7 +2,7 @@
 
 include 'vendor/autoload.php';
 include 'config.php';
-
+session_start();
 if (isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] !== '/') {
     $path = trim($_SERVER['PATH_INFO'], '/');
     echo '<pre>';
