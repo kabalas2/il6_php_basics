@@ -70,6 +70,71 @@ class User
 
     public function edit()
     {
+        if (!isset($_SESSION['user_id'])) {
+            Url::redirect('user/login');
+        }
+
+        $userId = $_SESSION['user_id'];
+        $user = new UserModel();
+        $user->load($userId);
+
+        $form = new FormHelper('user/update', 'POST');
+        $form->input([
+            'name' => 'name',
+            'type' => 'text',
+            'placeholder' => 'Vardas',
+            'value' => $user->getName()
+        ]);
+
+        $form->input([
+            'name' => 'last_name',
+            'type' => 'text',
+            'placeholder' => 'Pavarde',
+            'value' => $user->getLastName()
+        ]);
+        $form->input([
+            'name' => 'phone',
+            'type' => 'text',
+            'placeholder' => '+3706*******',
+            'value' => $user->getPhone()
+        ]);
+        $form->input([
+            'name' => 'email',
+            'type' => 'email',
+            'placeholder' => 'Email',
+            'value' => $user->getEmail()
+        ]);
+        $form->input([
+            'name' => 'password',
+            'type' => 'password',
+            'placeholder' => '* * * * * *'
+        ]);
+        $form->input([
+            'name' => 'password2',
+            'type' => 'password',
+            'placeholder' => '* * * * * *'
+        ]);
+
+        $cities = City::getCities();
+        $options = [];
+        foreach ($cities as $city) {
+            $id = $city->getId();
+            $options[$id] = $city->getName();
+        }
+        $form->select([
+            'name' => 'city_id',
+            'options' => $options,
+            'selected' => $user->getCityId()
+        ]);
+
+        $form->input([
+            'name' => 'create',
+            'type' => 'submit',
+            'value' => 'register'
+        ]);
+
+        echo $form->getForm();
+
 
     }
 
@@ -110,7 +175,7 @@ class User
             $user->setCityId($_POST['city_id']);
             $user->save();
             Url::redirect('user/login');
-        }else{
+        } else {
             echo 'Patikrinkite duomenis';
         }
     }
@@ -128,7 +193,7 @@ class User
             $_SESSION['user'] = $user;
             Url::redirect('/');
         } else {
-           Url::redirect('user/login');
+            Url::redirect('user/login');
         }
     }
 

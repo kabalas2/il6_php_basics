@@ -121,7 +121,17 @@ class User
 
     private function update()
     {
+        $data = [
+            'name' => $this->name,
+            'last_name' => $this->lastName,
+            'email' => $this->email,
+            'password' => $this->password,
+            'phone' => $this->phone,
+            'city_id' => $this->cityId
+        ];
 
+        $db = new DBHelper();
+        $db->insert('users', $data)->exec();
     }
 
     public function load($id)

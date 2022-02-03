@@ -52,7 +52,15 @@ class FormHelper
     {
         $this->form .= '<select name="'.$data['name'].'">';
         foreach ($data['options'] as $key => $option){
-            $this->form .= '<option value="'.$key.'">'.$option.'</option>';
+            $this->form .= '<option';
+            if(isset($data['selected'])){
+                if($data['selected'] == $key){
+                    $this->form .= ' selected ';
+                }
+            }
+
+            // <option selected value="3">
+            $this->form .= ' value="'.$key.'">'.$option.'</option>';
         }
         $this->form .= '</select>';
     }
