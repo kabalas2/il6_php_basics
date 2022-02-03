@@ -130,12 +130,36 @@ class User
         $form->input([
             'name' => 'create',
             'type' => 'submit',
-            'value' => 'register'
+            'value' => 'Edit'
         ]);
 
         echo $form->getForm();
 
+    }
 
+    public function update()
+    {
+        $userId = $_SESSION['user_id'];
+        $user = new UserModel();
+        $user->load($userId);
+
+        $user->setName($_POST['name']);
+        $user->setLastName($_POST['last_name']);
+        $user->setPhone($_POST['phone']);
+        $user->setCityId($_POST['city_id']);
+
+        if ($_POST['password'] != '' && Validator::checkPassword($_POST['password'], $_POST['password2'])) {
+            $user->setPassword(md5($_POST['password']));
+        }
+
+        if ($user->getEmail() != $_POST['email']) {
+            if (Validator::checkEmail($_POST['email']) && UserModel::emailUnic($_POST['email'])) {
+                $user->setEmail($_POST['email']);
+            }
+        }
+
+        $user->save();
+        Url::redirect('user/edit');
     }
 
     public function login()
