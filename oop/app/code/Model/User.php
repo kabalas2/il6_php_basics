@@ -131,7 +131,7 @@ class User
         ];
 
         $db = new DBHelper();
-        $db->insert('users', $data)->exec();
+        $db->update('users', $data)->where('id', $this->id)->exec();
     }
 
     public function load($id)
