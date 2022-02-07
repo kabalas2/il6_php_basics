@@ -235,5 +235,4 @@ class User extends AbstractController
         $this->data['users'] = UserModel::getAllUsers();
         $this->render('user/list');
     }
-
 }

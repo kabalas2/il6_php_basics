@@ -2,7 +2,9 @@
 
 namespace Controller;
 
-class Catalog
+use Core\AbstractController;
+
+class Catalog extends AbstractController
 {
     public function show($id = null)
     {
@@ -13,10 +15,7 @@ class Catalog
 
     public function all()
     {
-        for ($i = 0; $i < 10; $i++) {
-            echo '<a href="http://127.0.0.1:8001/index.php/catalog/show/' . $i . '">Read more</a>';
-            echo '<br>';
-        }
+        $this->render('catalog/all');
     }
 
     public function create()

@@ -27,6 +27,6 @@ if (isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] !== '/') {
         echo '404';
     }
 } else {
-    echo '<h1>Titulinis</h1>';
-    print_r($_SESSION);
+   $obj = new \Controller\Home();
+   $obj->index();
 }
