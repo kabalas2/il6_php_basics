@@ -230,4 +230,10 @@ class User extends AbstractController
         session_destroy();
     }
 
+    public function all()
+    {
+        $this->data['users'] = UserModel::getAllUsers();
+        $this->render('user/list');
+    }
+
 }

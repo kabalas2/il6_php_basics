@@ -7,13 +7,13 @@
     <nav>
         <ul>
             <li>
-                <a href="/">Home Page</a>
+                <a href="<?php echo BASE_URL ?>">Home Page</a>
             </li>
             <li>
-                <a href="/user/login">Login</a>
+                <a href="<?php echo BASE_URL ?>/user/login">Login</a>
             </li>
             <li>
-                <a href="/user/register">Sign Up</a>
+                <a href="<?php echo BASE_URL ?>/user/register">Sign Up</a>
             </li>
         </ul>
     </nav>
