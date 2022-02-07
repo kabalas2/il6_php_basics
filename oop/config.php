@@ -5,3 +5,4 @@ define('SERVERNAME','localhost');
 define('DB_USER', 'root');
 define('DB_PASSWORD', 'root');
 define('DB_NAME', 'shop_lt');
+define('PROJECT_ROOT_DIR', __DIR__);

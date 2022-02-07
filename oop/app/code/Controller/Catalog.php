@@ -19,7 +19,7 @@ class Catalog
         }
     }
 
-    public function create($data)
+    public function create()
     {
 
     }

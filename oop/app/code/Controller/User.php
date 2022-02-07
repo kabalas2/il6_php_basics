@@ -8,8 +8,9 @@ use Helper\Validator;
 use Helper\Url;
 use Model\City;
 use Model\User as UserModel;
+use Core\AbstractController;
 
-class User
+class User extends AbstractController
 {
     public function show($id)
     {
@@ -65,7 +66,8 @@ class User
             'value' => 'register'
         ]);
 
-        echo $form->getForm();
+        $this->data['form'] = $form->getForm();
+        $this->render('user/register');
     }
 
     public function edit()
