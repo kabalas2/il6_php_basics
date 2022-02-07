@@ -135,7 +135,8 @@ class User extends AbstractController
             'value' => 'Edit'
         ]);
 
-        echo $form->getForm();
+        $this->data['form'] = $form->getForm();
+        $this->render('user/edit');
 
     }
 
@@ -183,7 +184,8 @@ class User extends AbstractController
             'value' => 'login'
         ]);
 
-        echo $form->getForm();
+        $this->data['form'] = $form->getForm();
+        $this->render('user/login');
     }
 
     public function create()
