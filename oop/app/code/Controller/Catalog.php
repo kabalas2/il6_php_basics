@@ -61,8 +61,15 @@ class Catalog extends AbstractController
 
     public function edit($id)
     {
+        if (!isset($_SESSION['user_id'])) {
+            Url::redirect('');
+        }
         $ad = new Ad();
         $ad->load($id);
+
+        if ($_SESSION['user_id'] != $ad->getUserId()) {
+            Url::redirect('');
+        }
 
         $form = new FormHelper('catalog/update', 'POST');
         $form->input([
@@ -115,7 +122,6 @@ class Catalog extends AbstractController
         $ad->setPrice($_POST['price']);
         $ad->setYear($_POST['year']);
         $ad->setTypeId(1);
-        $ad->setUserId($_SESSION['user_id']);
         $ad->save();
     }
 

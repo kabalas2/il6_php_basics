@@ -212,7 +212,8 @@ class Ad
             $this->id = $ad['id'];
             $this->title = $ad['title'];
             $this->manufacturerId = $ad['manufacturer_id'];
-            $this->modelId = $ad['mdoel_id'];
+            $this->description = $ad['description'];
+            $this->modelId = $ad['model_id'];
             $this->price = $ad['price'];
             $this->year = $ad['year'];
             $this->typeId = $ad['type_id'];
