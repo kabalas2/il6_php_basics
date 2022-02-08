@@ -125,5 +125,16 @@ class Catalog extends AbstractController
         $ad->save();
     }
 
+    public function all()
+    {
+
+    }
+
+    public function show($id)
+    {
+
+    }
+
+
 }
 

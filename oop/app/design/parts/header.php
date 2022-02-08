@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>Autopliusas</title>
+    <link rel="stylesheet" href="<?php echo BASE_URL_WITHOUT_INDEX_PHP.'css/style.css'; ?>">
 </head>
 <body>
 <header>
