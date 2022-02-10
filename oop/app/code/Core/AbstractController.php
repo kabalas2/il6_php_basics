@@ -1,6 +1,7 @@
 <?php
 
 namespace Core;
+use Helper\Url;
 
 class AbstractController
 {
@@ -21,6 +22,11 @@ class AbstractController
     protected function isUserLoged()
     {
         return isset($_SESSION['user_id']);
+    }
+
+    public function url($path, $param = null)
+    {
+        return Url::link($path, $param);
     }
 
 }

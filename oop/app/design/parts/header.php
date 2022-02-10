@@ -12,6 +12,7 @@
             </li>
             <li>
                 <a href="<?php echo BASE_URL ?>/catalog/all">All ads</a>
+                <a href="<?php   ?>">All ads</a>
             </li>
             <?php if ($this->isUserLoged()): ?>
                 <li>
