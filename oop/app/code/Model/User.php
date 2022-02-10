@@ -120,12 +120,10 @@ class User extends AbstractModel
     }
 
 
-
-
     public function load($id)
     {
         $db = new DBHelper();
-        $data = $db->select()->from('users')->where('id',$id)->getOne();
+        $data = $db->select()->from('users')->where('id', $id)->getOne();
         $this->id = $data['id'];
         $this->name = $data['name'];
         $this->lastName = $data['last_name'];
@@ -136,16 +134,6 @@ class User extends AbstractModel
         $city = new City();
         $this->city = $city->load($this->cityId);
         return $this;
-    }
-
-
-
-
-    public static function emailUnic($email)
-    {
-        $db = new DBHelper();
-        $rez = $db->select()->from('users')->where('email', $email)->get();
-        return empty($rez);
     }
 
     public static function checkLoginCredentionals($email, $pass)
@@ -159,9 +147,9 @@ class User extends AbstractModel
             ->andWhere('active', 1)
             ->getOne();
 
-        if(isset($rez['id']) ){
+        if (isset($rez['id'])) {
             return $rez['id'];
-        }else{
+        } else {
             return false;
         }
         //return isset($rez['id']) ? $rez['id'] : false;
@@ -172,7 +160,7 @@ class User extends AbstractModel
         $db = new DBHelper();
         $data = $db->select('id')->from('users')->get();
         $users = [];
-        foreach ($data as $element){
+        foreach ($data as $element) {
             $user = new User();
             $user->load($element['id']);
             $users[] = $user;

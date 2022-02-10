@@ -51,5 +51,12 @@ class AbstractModel
         $db->delete()->from($this->table)->where('id', $this->id)->exec();
     }
 
+    public static function isValueUnic($colum, $value, $table)
+    {
+        $db = new DBHelper();
+        $rez = $db->select()->from($table)->where($colum, $value)->get();
+        return empty($rez);
+    }
+
 
 }
