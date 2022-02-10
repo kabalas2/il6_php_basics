@@ -5,11 +5,10 @@ namespace Model;
 use Helper\DBHelper;
 use Helper\FormHelper;
 use Model\City;
+use Core\AbstractModel;
 
-class User
+class User extends AbstractModel
 {
-    private $id;
-
     private $name;
 
     private $lastName;
@@ -26,10 +25,23 @@ class User
 
     private $active;
 
-    public function getId()
+    public function __construct()
     {
-        return $this->id;
+        $this->table = 'user';
     }
+
+    public function assignData()
+    {
+        $this->data = [
+            'name' => $this->name,
+            'last_name' => $this->lastName,
+            'email' => $this->email,
+            'password' => $this->password,
+            'phone' => $this->phone,
+            'city_id' => $this->cityId
+        ];
+    }
+
 
     public function getName()
     {
@@ -107,44 +119,8 @@ class User
         $this->active = $active;
     }
 
-    public function save()
-    {
-        if (!isset($this->id)) {
-            $this->create();
-        } else {
-            $this->update();
-        }
-    }
 
-    private function create()
-    {
-        $data = [
-            'name' => $this->name,
-            'last_name' => $this->lastName,
-            'email' => $this->email,
-            'password' => $this->password,
-            'phone' => $this->phone,
-            'city_id' => $this->cityId
-        ];
 
-        $db = new DBHelper();
-        $db->insert('users', $data)->exec();
-    }
-
-    private function update()
-    {
-        $data = [
-            'name' => $this->name,
-            'last_name' => $this->lastName,
-            'email' => $this->email,
-            'password' => $this->password,
-            'phone' => $this->phone,
-            'city_id' => $this->cityId
-        ];
-
-        $db = new DBHelper();
-        $db->update('users', $data)->where('id', $this->id)->exec();
-    }
 
     public function load($id)
     {
@@ -162,11 +138,7 @@ class User
         return $this;
     }
 
-    public function delete()
-    {
-        $db = new DBHelper();
-        $db->delete()->from('users')->where('id', $this->id)->exec();
-    }
+
 
 
     public static function emailUnic($email)
@@ -208,8 +180,5 @@ class User
 
         return $users;
     }
-
-
-
 
 }

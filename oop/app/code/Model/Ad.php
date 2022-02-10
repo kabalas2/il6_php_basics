@@ -3,10 +3,10 @@
 namespace Model;
 
 use Helper\DBHelper;
+use Core\AbstractModel;
 
-class Ad
+class Ad extends AbstractModel
 {
-    private $id;
 
     private $title;
 
@@ -28,12 +28,9 @@ class Ad
 
     private $active;
 
-    /**
-     * @return mixed
-     */
-    public function getId()
+    public function __construct()
     {
-        return $this->id;
+        $this->table = 'ads';
     }
 
 
@@ -185,21 +182,9 @@ class Ad
         $this->active = $active;
     }
 
-
-
-    public function save()
+    protected function assignData()
     {
-        if(isset($this->id)){
-            $this->update();
-        }else{
-            $this->create();
-        }
-    }
-
-    public function update()
-    {
-        $db = new DBHelper();
-        $data = [
+        $this->data = [
             'title' => $this->title,
             'description' => $this->description,
             'manufacturer_id' => $this->manufacturerId,
@@ -209,31 +194,14 @@ class Ad
             'type_id' => $this->typeId,
             'user_id' => $this->userId,
         ];
-
-        $db->update('ads', $data)->where('id', $this->id)->exec();
     }
 
-    public function create()
-    {
-        $db = new DBHelper();
-        $data = [
-            'title' => $this->title,
-            'description' => $this->description,
-            'manufacturer_id' => $this->manufacturerId,
-            'model_id' => $this->modelId,
-            'price' => $this->price,
-            'year' => $this->year,
-            'type_id' => $this->typeId,
-            'user_id' => $this->userId,
-        ];
-        $db->insert('ads', $data)->exec();
-    }
 
     public function load($id)
     {
         $db = new DBHelper();
         $ad = $db->select()->from('ads')->where('id', $id)->getOne();
-        if(!empty($ad)){
+        if (!empty($ad)) {
             $this->id = $ad['id'];
             $this->title = $ad['title'];
             $this->manufacturerId = $ad['manufacturer_id'];
@@ -251,9 +219,9 @@ class Ad
     public static function getAllAds()
     {
         $db = new DBHelper();
-        $data = $db->select()->from('ads')->where('active',1)->get();
+        $data = $db->select()->from('ads')->where('active', 1)->get();
         $ads = [];
-        foreach ($data as $element){
+        foreach ($data as $element) {
             $ad = new Ad();
             $ad->load($element['id']);
             $ads[] = $ad;
