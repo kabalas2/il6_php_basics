@@ -24,6 +24,10 @@ class Ad
 
     private $userId;
 
+    private $image;
+
+    private $active;
+
     /**
      * @return mixed
      */
@@ -161,6 +165,27 @@ class Ad
         $this->userId = $userId;
     }
 
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    public function isActive()
+    {
+        return $this->active;
+    }
+
+    public function setActive($active)
+    {
+        $this->active = $active;
+    }
+
+
 
     public function save()
     {
@@ -221,5 +246,18 @@ class Ad
         }
 
         return $this;
+    }
+
+    public static function getAllAds()
+    {
+        $db = new DBHelper();
+        $data = $db->select()->from('ads')->get();
+        $ads = [];
+        foreach ($data as $element){
+            $ad = new Ad();
+            $ad->load($element['id']);
+            $ads[] = $ad;
+        }
+        return $ads;
     }
 }

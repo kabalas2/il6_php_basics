@@ -24,6 +24,8 @@ class User
 
     private $city;
 
+    private $active;
+
     public function getId()
     {
         return $this->id;
@@ -93,6 +95,16 @@ class User
     public function setCityId($id)
     {
         $this->cityId = $id;
+    }
+
+    public function isActive()
+    {
+        return $this->active;
+    }
+
+    public function setActive($active)
+    {
+        $this->active = $active;
     }
 
     public function save()

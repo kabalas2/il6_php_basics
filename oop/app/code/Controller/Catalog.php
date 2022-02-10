@@ -33,6 +33,11 @@ class Catalog extends AbstractController
             'type' => 'text',
             'placeholder' => 'Metai'
         ]);
+        $form->input([
+            'name' => 'image',
+            'type' => 'text',
+            'placeholder' => 'Paveiksliukas'
+        ]);
 
         $form->input([
             'type' => 'submit',
@@ -54,6 +59,8 @@ class Catalog extends AbstractController
         $ad->setModelId(1);
         $ad->setPrice($_POST['price']);
         $ad->setYear($_POST['year']);
+        $ad->setImage($_POST['image']);
+        $ad->setActive(1);
         $ad->setTypeId(1);
         $ad->setUserId($_SESSION['user_id']);
         $ad->save();
@@ -94,6 +101,12 @@ class Catalog extends AbstractController
             'value' => $ad->getPrice()
         ]);
         $form->input([
+            'name' => 'image',
+            'type' => 'text',
+            'placeholder' => 'Kaina',
+            'value' => $ad->getImage()
+        ]);
+        $form->input([
             'name' => 'year',
             'type' => 'text',
             'placeholder' => 'Metai',
@@ -119,6 +132,7 @@ class Catalog extends AbstractController
         $ad->setDescription($_POST['description']);
         $ad->setManufacturerId(1);
         $ad->setModelId(1);
+        $ad->setImage($_POST['image']);
         $ad->setPrice($_POST['price']);
         $ad->setYear($_POST['year']);
         $ad->setTypeId(1);
@@ -127,12 +141,14 @@ class Catalog extends AbstractController
 
     public function all()
     {
-
+        $this->data['ads'] = Ad::getAllAds();
+        $this->render('catalog/all');
     }
 
     public function show($id)
     {
-
+        $ad = new Ad();
+        $ad->load($id);
     }
 
 
