@@ -148,7 +148,9 @@ class Catalog extends AbstractController
     public function show($id)
     {
         $ad = new Ad();
-        $ad->load($id);
+        $this->data['ad'] = $ad->load($id);
+        $this->render('catalog/single');
+
     }
 
 

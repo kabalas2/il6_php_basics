@@ -184,6 +184,7 @@ class User
             ->from('users')
             ->where('email', $email)
             ->andWhere('password', $pass)
+            ->andWhere('active', 1)
             ->getOne();
 
         if(isset($rez['id']) ){

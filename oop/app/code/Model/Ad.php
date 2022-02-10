@@ -251,7 +251,7 @@ class Ad
     public static function getAllAds()
     {
         $db = new DBHelper();
-        $data = $db->select()->from('ads')->get();
+        $data = $db->select()->from('ads')->where('active',1)->get();
         $ads = [];
         foreach ($data as $element){
             $ad = new Ad();
