@@ -52,6 +52,10 @@ class Catalog extends AbstractController
 
     public function create()
     {
+        $slug = Url::slug($_POST['title']);
+        while (!Ad::isValueUnic('slug', $slug, 'ads')) {
+            $slug = $slug . rand(0, 100);
+        }
         $ad = new Ad();
         $ad->setTitle($_POST['title']);
         $ad->setDescription($_POST['description']);
@@ -61,6 +65,7 @@ class Catalog extends AbstractController
         $ad->setYear($_POST['year']);
         $ad->setImage($_POST['image']);
         $ad->setActive(1);
+        $ad->setSlug($slug);
         $ad->setTypeId(1);
         $ad->setUserId($_SESSION['user_id']);
         $ad->save();
@@ -145,12 +150,15 @@ class Catalog extends AbstractController
         $this->render('catalog/all');
     }
 
-    public function show($id)
+    public function show($slug)
     {
         $ad = new Ad();
-        $this->data['ad'] = $ad->load($id);
-        $this->render('catalog/single');
-
+        $this->data['ad'] = $ad->loadBySlug($slug);
+        if($this->data['ad']){
+            $this->render('catalog/single');
+        }else{
+            echo '404';
+        }
     }
 
 

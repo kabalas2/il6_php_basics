@@ -18,4 +18,11 @@ class Url
         }
         return $link;
     }
+
+    public static function slug($string)
+    {
+        $string = strtolower($string);
+        $string = str_replace(' ','-',$string);
+        return $string;
+    }
 }
