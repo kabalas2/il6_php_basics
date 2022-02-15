@@ -89,6 +89,7 @@ class DBHelper
     // name => Arnoldas,
     // last_name => Turulis
     // name,last_name,email
+
     public function insert($table, $data)
     {
         $this->sql .= 'INSERT INTO ' . $table .
