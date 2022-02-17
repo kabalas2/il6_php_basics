@@ -30,6 +30,8 @@ class Ad extends AbstractModel
 
     private $slug;
 
+    private $views;
+
     public function __construct()
     {
         $this->table = 'ads';
@@ -194,6 +196,16 @@ class Ad extends AbstractModel
         $this->slug = $slug;
     }
 
+    public function setViews($views)
+    {
+        $this->views = $views;
+    }
+
+    public function getViews()
+    {
+        return $this->views;
+    }
+
     protected function assignData()
     {
         $this->data = [
@@ -207,7 +219,8 @@ class Ad extends AbstractModel
             'user_id' => $this->userId,
             'image' => $this->image,
             'active' => $this->active,
-            'slug' => $this->slug
+            'slug' => $this->slug,
+            'views' => $this->views
         ];
     }
 
@@ -229,6 +242,7 @@ class Ad extends AbstractModel
             $this->image = $ad['image'];
             $this->active = $ad['active'];
             $this->slug = $ad['slug'];
+            $this->views = $ad['views'];
         }
 
         return $this;
@@ -250,6 +264,42 @@ class Ad extends AbstractModel
     {
         $db = new DBHelper();
         $data = $db->select()->from('ads')->where('active', 1)->get();
+        $ads = [];
+        foreach ($data as $element) {
+            $ad = new Ad();
+            $ad->load($element['id']);
+            $ads[] = $ad;
+        }
+        return $ads;
+    }
+
+    public static function getPopularAds($limit)
+    {
+        $db = new DBHelper();
+        $data = $db->select()
+            ->from('ads')
+            ->where('active', 1)
+            ->orderBy('views', 'DESC')
+            ->limit($limit)
+            ->get();
+        $ads = [];
+        foreach ($data as $element) {
+            $ad = new Ad();
+            $ad->load($element['id']);
+            $ads[] = $ad;
+        }
+        return $ads;
+    }
+
+    public static function getLatest($limit)
+    {
+        $db = new DBHelper();
+        $data = $db->select()
+            ->from('ads')
+            ->where('active', 1)
+            ->orderBy('id', 'DESC')
+            ->limit($limit)
+            ->get();
         $ads = [];
         foreach ($data as $element) {
             $ad = new Ad();

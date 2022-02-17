@@ -181,7 +181,8 @@ class User extends AbstractController
         $form->input([
             'name' => 'login',
             'type' => 'submit',
-            'value' => 'login'
+            'value' => 'login',
+            'class' => 'login button'
         ]);
 
         $this->data['form'] = $form->getForm();

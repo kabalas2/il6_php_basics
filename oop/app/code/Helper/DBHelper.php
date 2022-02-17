@@ -109,9 +109,16 @@ class DBHelper
         return $this;
     }
 
+    public function orderBy($column, $direction = 'ASC')
+    {
+        $this->sql.= ' ORDER BY '.$column.' '.$direction.' ';
+        return $this;
+    }
+
     public function limit($number)
     {
         $this->sql .= ' LIMIT ' . $number;
+        return $this;
     }
 
 }

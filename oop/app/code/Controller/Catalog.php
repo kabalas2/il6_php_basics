@@ -153,10 +153,14 @@ class Catalog extends AbstractController
     public function show($slug)
     {
         $ad = new Ad();
-        $this->data['ad'] = $ad->loadBySlug($slug);
-        if($this->data['ad']){
+        $ad->loadBySlug($slug);
+        $newViews = (int)$ad->getViews() + 1;
+        $ad->setViews($newViews);
+        $ad->save();
+        $this->data['ad'] = $ad;
+        if ($this->data['ad']) {
             $this->render('catalog/single');
-        }else{
+        } else {
             echo '404';
         }
     }
