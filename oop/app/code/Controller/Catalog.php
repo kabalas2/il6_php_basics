@@ -73,6 +73,7 @@ class Catalog extends AbstractController
         $ad->setImage($_POST['image']);
         $ad->setActive(1);
         $ad->setSlug($slug);
+        $ad->setViews(0);
         $ad->setTypeId(1);
         $ad->setUserId($_SESSION['user_id']);
         $ad->save();
@@ -161,10 +162,12 @@ class Catalog extends AbstractController
         $ad->setViews($newViews);
         $ad->save();
         $this->data['ad'] = $ad;
+        $this->data['title'] = $ad->getTitle();
+        $this->data['meta_description'] = $ad->getDescription();
         if ($this->data['ad']) {
             $this->render('catalog/single');
         } else {
-            echo '404';
+            $this->render('parts/errors/error404');
         }
     }
 

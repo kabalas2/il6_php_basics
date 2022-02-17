@@ -190,3 +190,357 @@ SELECT *  FROM ads  WHERE id="5"
 2022/02/17 19:46:20 SELECT *  FROM ads  WHERE slug="audi-80-1.9-tdi"
 2022/02/17 19:46:20 SELECT *  FROM ads  WHERE id="5"
 2022/02/17 19:46:20 UPDATE ads SET title = 'Audi 80 1.9 TDI',description = 'Kuriasi, vaziuoja',manufacturer_id = '1',model_id = '1',price = '500',year = '1990',type_id = '1',user_id = '10',image = 'https://autoplius-img.dgn.lt/ann_3_211396638/audi-80-1-9-l-sedanas-1993-dyzelinas-3.jpg',active = '1',slug = 'audi-80-1.9-tdi',views = '7' WHERE id="5"
+2022/02/17 19:53:34 SELECT *  FROM ads  WHERE active="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 19:53:34 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:53:34 SELECT *  FROM ads  WHERE active="1" ORDER BY id DESC  LIMIT 5
+2022/02/17 19:53:34 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:53:36 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 19:53:36 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:54:02 SELECT *  FROM ads  WHERE active="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 19:54:02 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:54:02 SELECT *  FROM ads  WHERE active="1" ORDER BY id DESC  LIMIT 5
+2022/02/17 19:54:02 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:54:10 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 19:54:10 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:54:11 SELECT *  FROM ads  WHERE active="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 19:54:11 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:54:11 SELECT *  FROM ads  WHERE active="1" ORDER BY id DESC  LIMIT 5
+2022/02/17 19:54:11 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:54:12 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 19:54:12 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:54:12 SELECT *  FROM ads  WHERE active="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 19:54:12 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:54:12 SELECT *  FROM ads  WHERE active="1" ORDER BY id DESC  LIMIT 5
+2022/02/17 19:54:12 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:54:40 SELECT *  FROM ads  WHERE active="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 19:54:40 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:54:40 SELECT *  FROM ads  WHERE active="1" ORDER BY id DESC  LIMIT 5
+2022/02/17 19:54:40 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:54:41 SELECT *  FROM ads  WHERE active="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 19:54:41 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:54:41 SELECT *  FROM ads  WHERE active="1" ORDER BY id DESC  LIMIT 5
+2022/02/17 19:54:41 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:55:55 SELECT *  FROM ads  WHERE active="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 19:55:55 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:55:55 SELECT *  FROM ads  WHERE active="1" ORDER BY id DESC  LIMIT 5
+2022/02/17 19:55:55 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:55:58 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 19:55:58 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:56:03 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 19:56:03 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:57:25 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 19:57:25 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:59:20 SELECT *  FROM ads  WHERE active="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 19:59:20 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 19:59:20 SELECT *  FROM ads  WHERE active="1" ORDER BY id DESC  LIMIT 5
+2022/02/17 19:59:20 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:07:28 SELECT id  FROM users  WHERE email="nikaflash+test@gmail.com" AND password="0192023a7bbd73250516f069df18b500" AND active="1"
+2022/02/17 20:07:28 SELECT *  FROM users  WHERE id="10"
+2022/02/17 20:07:28 SELECT *  FROM cities  WHERE id="1"
+2022/02/17 20:07:28 SELECT *  FROM ads  WHERE active="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 20:07:28 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:07:28 SELECT *  FROM ads  WHERE active="1" ORDER BY id DESC  LIMIT 5
+2022/02/17 20:07:28 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:09:09 SELECT *  FROM ads  WHERE slug="opel-kadett,-1.2-l.,-kup�-(coupe)"
+2022/02/17 20:09:09 INSERT INTO ads (title,description,manufacturer_id,model_id,price,year,type_id,user_id,image,active,slug,views)
+             VALUES ("Opel Kadett, 1.2 l., kupė (coupe)","AprasymasVauhxall chevette L
+Opel kadett
+1.2 benz, originalus , H istorinis, viskas veikia
+Tech apziura iki 2024m.
+P:S: Kiti nr, be 88888
+Kaunas 3999","1","1","4000","1976","1","10","https://autoplius-img.dgn.lt/ann_3_168426879/opel-kadett-1-2-l-kupe-coupe-1976-benzinas-0.jpg","1","opel-kadett,-1.2-l.,-kup�-(coupe)","")
+2022/02/17 20:09:42 SELECT *  FROM ads  WHERE slug="opel-kadett-1.2-l-kupe-(coupe)"
+2022/02/17 20:09:42 INSERT INTO ads (title,description,manufacturer_id,model_id,price,year,type_id,user_id,image,active,slug,views)
+             VALUES ("Opel Kadett 1.2 l kupe (coupe)","AprasymasVauhxall chevette L
+Opel kadett
+1.2 benz, originalus , H istorinis, viskas veikia
+Tech apziura iki 2024m.
+P:S: Kiti nr, be 88888
+Kaunas 3999","1","1","4000","1976","1","10","https://autoplius-img.dgn.lt/ann_3_168426879/opel-kadett-1-2-l-kupe-coupe-1976-benzinas-0.jpg","1","opel-kadett-1.2-l-kupe-(coupe)","")
+2022/02/17 20:10:53 SELECT *  FROM ads  WHERE slug="opel-kadett-1.2-l-kupe-(coupe)"
+2022/02/17 20:10:53 INSERT INTO ads (title,description,manufacturer_id,model_id,price,year,type_id,user_id,image,active,slug,views)
+             VALUES ("Opel Kadett 1.2 l kupe (coupe)","AprasymasVauhxall chevette L
+Opel kadett
+1.2 benz, originalus , H istorinis, viskas veikia
+Tech apziura iki 2024m.
+P:S: Kiti nr, be 88888
+Kaunas 3999","1","1","4000","1976","1","10","https://autoplius-img.dgn.lt/ann_3_168426879/opel-kadett-1-2-l-kupe-coupe-1976-benzinas-0.jpg","1","opel-kadett-1.2-l-kupe-(coupe)","0")
+2022/02/17 20:12:22 SELECT *  FROM ads  WHERE slug="ford-sierra-1.8-l"
+2022/02/17 20:12:22 INSERT INTO ads (title,description,manufacturer_id,model_id,price,year,type_id,user_id,image,active,slug,views)
+             VALUES ("Ford Sierra 1.8 l","Automobilis buvo naudojamas garbaus amžiaus žmogaus tad nebuvo laužomas, sutvarkyta važiuoklė, pakeisti žvaklaidžiai, babinos. Praėjo T.A savo eiga. 3 savininkai nuo naujos. Salonas išlaikytas, kėbulas turintis paviršutinių rūdelių. Dugnas visad buvo dengtas antikorozine danga. Plačiau telefonu. Dadedu 6/8 ratus su padangom vasara.","1","1","1000","1988","1","10","https://autoplius-img.dgn.lt/ann_3_201421464/ford-sierra-1-8-l-hecbekas-1988-benzinas-2.jpg","1","ford-sierra-1.8-l","0")
+2022/02/17 20:14:22 SELECT *  FROM ads  WHERE slug="honda-civic-1.5-l"
+2022/02/17 20:14:22 INSERT INTO ads (title,description,manufacturer_id,model_id,price,year,type_id,user_id,image,active,slug,views)
+             VALUES ("Honda Civic 1.5 l","Užsiveda ir važiuoja gerai, trauka gera, automatinė dėžė dirba gerai. Viskas originalu, salonas gerai išsilaikęs.
+
+Elektrinis stoglangis, R15 lieti ratlankiai, stiklai be įtrūkimų. Keistas duslintuvas, granata, generatorius.
+
+Automobiliui 30 metu, todel jau gali būti suteiktas istorinio automobilio statusas.
+
+Kol kas parduodamas be techninės apziuros,
+kebulo trukumai, parudijes, važiuoklėje priekyje kažkas bilda, bagazine neuzsidaro.
+
+Gal sudomintų keitimas į brangesnį automobilį su mūsų priemoka.","1","1","1500","1991","1","10","https://autoplius-img.dgn.lt/ann_3_205921790/honda-civic-1-5-l-hecbekas-1991-benzinas-0.jpg","1","honda-civic-1.5-l","0")
+2022/02/17 20:14:35 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:14:35 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:14:35 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:14:35 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:14:35 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:15:41 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:15:41 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:15:41 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:15:41 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:15:41 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:16:43 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:16:43 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:16:44 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:16:44 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:16:44 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:17:57 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:17:57 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:17:57 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:17:57 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:17:57 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:18:14 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:18:14 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:18:14 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:18:14 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:18:14 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:18:56 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:18:56 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:18:56 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:18:56 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:18:56 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:19:29 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:19:29 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:19:29 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:19:29 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:19:29 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:19:38 SELECT *  FROM ads  WHERE slug="opel-kadett-1.2-l-kupe-(coupe)"
+2022/02/17 20:19:38 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:19:38 UPDATE ads SET title = 'Opel Kadett 1.2 l kupe (coupe)',description = 'AprasymasVauhxall chevette L
+Opel kadett
+1.2 benz, originalus , H istorinis, viskas veikia
+Tech apziura iki 2024m.
+P:S: Kiti nr, be 88888
+Kaunas 3999',manufacturer_id = '1',model_id = '1',price = '4000',year = '1976',type_id = '1',user_id = '10',image = 'https://autoplius-img.dgn.lt/ann_3_168426879/opel-kadett-1-2-l-kupe-coupe-1976-benzinas-0.jpg',active = '1',slug = 'opel-kadett-1.2-l-kupe-(coupe)',views = '1' WHERE id="6"
+2022/02/17 20:19:47 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:19:47 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:19:47 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:19:47 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:19:47 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:20:27 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:20:27 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:20:27 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:20:27 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:20:27 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:21:52 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:21:52 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:21:52 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:21:52 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:21:52 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:23:15 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:23:15 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:23:15 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:23:15 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:23:15 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:24:05 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:24:05 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:24:05 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:24:05 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:24:05 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:25:02 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:25:02 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:25:02 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:25:02 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:25:02 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:26:06 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:26:06 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:26:06 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:26:06 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:26:06 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:29:18 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:29:18 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:29:18 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:29:18 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:29:18 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:29:44 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:29:44 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:29:44 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:29:44 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:29:44 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:32:59 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:32:59 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:32:59 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:32:59 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:32:59 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:33:44 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:33:44 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:33:44 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:33:44 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:33:44 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:33:46 SELECT *  FROM ads  WHERE active="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 20:33:46 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:33:46 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:33:46 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:33:46 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:33:46 SELECT *  FROM ads  WHERE active="1" ORDER BY id DESC  LIMIT 5
+2022/02/17 20:33:46 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:33:46 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:33:46 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:33:46 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:33:47 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:33:47 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:33:47 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:33:47 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:33:47 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:33:48 SELECT *  FROM ads  WHERE active="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 20:33:48 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:33:48 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:33:48 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:33:48 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:33:48 SELECT *  FROM ads  WHERE active="1" ORDER BY id DESC  LIMIT 5
+2022/02/17 20:33:48 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:33:48 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:33:48 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:33:48 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:33:55 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:33:55 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:33:55 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:33:55 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:33:55 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:35:26 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:35:26 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:35:26 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:35:26 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:35:26 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:36:28 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:36:28 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:36:28 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:36:28 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:36:28 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 20:38:09 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 20:38:09 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 20:38:09 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 20:38:09 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 20:38:09 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 21:12:57 SELECT *  FROM ads  WHERE slug="opel-kadett-1.2-l-kupe-(coupe)"
+2022/02/17 21:12:57 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 21:12:57 UPDATE ads SET title = 'Opel Kadett 1.2 l kupe (coupe)',description = 'AprasymasVauhxall chevette L
+Opel kadett
+1.2 benz, originalus , H istorinis, viskas veikia
+Tech apziura iki 2024m.
+P:S: Kiti nr, be 88888
+Kaunas 3999',manufacturer_id = '1',model_id = '1',price = '4000',year = '1976',type_id = '1',user_id = '10',image = 'https://autoplius-img.dgn.lt/ann_3_168426879/opel-kadett-1-2-l-kupe-coupe-1976-benzinas-0.jpg',active = '1',slug = 'opel-kadett-1.2-l-kupe-(coupe)',views = '2' WHERE id="6"
+2022/02/17 21:13:04 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 21:13:04 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:13:04 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 21:13:04 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 21:13:04 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 21:13:10 SELECT *  FROM ads  WHERE slug="opel-kadett-1.2-l-kupe-(coupe)"
+2022/02/17 21:13:10 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 21:13:10 UPDATE ads SET title = 'Opel Kadett 1.2 l kupe (coupe)',description = 'AprasymasVauhxall chevette L
+Opel kadett
+1.2 benz, originalus , H istorinis, viskas veikia
+Tech apziura iki 2024m.
+P:S: Kiti nr, be 88888
+Kaunas 3999',manufacturer_id = '1',model_id = '1',price = '4000',year = '1976',type_id = '1',user_id = '10',image = 'https://autoplius-img.dgn.lt/ann_3_168426879/opel-kadett-1-2-l-kupe-coupe-1976-benzinas-0.jpg',active = '1',slug = 'opel-kadett-1.2-l-kupe-(coupe)',views = '3' WHERE id="6"
+2022/02/17 21:22:34 SELECT *  FROM ads  WHERE slug="opel-kadett-1.2-l-kupe-(coupe)"
+2022/02/17 21:22:34 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 21:22:34 UPDATE ads SET title = 'Opel Kadett 1.2 l kupe (coupe)',description = 'AprasymasVauhxall chevette L
+Opel kadett
+1.2 benz, originalus , H istorinis, viskas veikia
+Tech apziura iki 2024m.
+P:S: Kiti nr, be 88888
+Kaunas 3999',manufacturer_id = '1',model_id = '1',price = '4000',year = '1976',type_id = '1',user_id = '10',image = 'https://autoplius-img.dgn.lt/ann_3_168426879/opel-kadett-1-2-l-kupe-coupe-1976-benzinas-0.jpg',active = '1',slug = 'opel-kadett-1.2-l-kupe-(coupe)',views = '4' WHERE id="6"
+2022/02/17 21:22:47 SELECT *  FROM ads  WHERE active="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 21:22:47 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:22:47 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 21:22:47 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 21:22:47 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 21:22:47 SELECT *  FROM ads  WHERE active="1" ORDER BY id DESC  LIMIT 5
+2022/02/17 21:22:47 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 21:22:47 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 21:22:47 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 21:22:47 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:22:49 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 21:22:49 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:22:49 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 21:22:49 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 21:22:49 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 21:24:51 SELECT *  FROM ads  WHERE active="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 21:24:51 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:24:51 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 21:24:51 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 21:24:51 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 21:24:51 SELECT *  FROM ads  WHERE active="1" ORDER BY id DESC  LIMIT 5
+2022/02/17 21:24:51 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 21:24:51 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 21:24:51 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 21:24:51 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:24:53 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 21:24:53 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:24:53 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 21:24:53 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 21:24:53 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 21:24:54 SELECT *  FROM ads  WHERE slug="audi-80-1.9-tdi"
+2022/02/17 21:24:54 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:24:54 UPDATE ads SET title = 'Audi 80 1.9 TDI',description = 'Kuriasi, vaziuoja',manufacturer_id = '1',model_id = '1',price = '500',year = '1990',type_id = '1',user_id = '10',image = 'https://autoplius-img.dgn.lt/ann_3_211396638/audi-80-1-9-l-sedanas-1993-dyzelinas-3.jpg',active = '1',slug = 'audi-80-1.9-tdi',views = '8' WHERE id="5"
+2022/02/17 21:26:26 SELECT *  FROM ads  WHERE slug="audi-80-1.9-tdi"
+2022/02/17 21:26:26 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:26:26 UPDATE ads SET title = 'Audi 80 1.9 TDI',description = 'Kuriasi, vaziuoja',manufacturer_id = '1',model_id = '1',price = '500',year = '1990',type_id = '1',user_id = '10',image = 'https://autoplius-img.dgn.lt/ann_3_211396638/audi-80-1-9-l-sedanas-1993-dyzelinas-3.jpg',active = '1',slug = 'audi-80-1.9-tdi',views = '9' WHERE id="5"
+2022/02/17 21:26:30 SELECT *  FROM ads  WHERE active="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 21:26:30 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:26:30 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 21:26:30 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 21:26:30 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 21:26:30 SELECT *  FROM ads  WHERE active="1" ORDER BY id DESC  LIMIT 5
+2022/02/17 21:26:30 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 21:26:30 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 21:26:30 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 21:26:30 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:26:35 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 21:26:35 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:26:35 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 21:26:35 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 21:26:35 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 21:26:37 SELECT *  FROM ads  WHERE slug="honda-civic-1.5-l"
+2022/02/17 21:26:37 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 21:26:37 UPDATE ads SET title = 'Honda Civic 1.5 l',description = 'Užsiveda ir važiuoja gerai, trauka gera, automatinė dėžė dirba gerai. Viskas originalu, salonas gerai išsilaikęs.
+
+Elektrinis stoglangis, R15 lieti ratlankiai, stiklai be įtrūkimų. Keistas duslintuvas, granata, generatorius.
+
+Automobiliui 30 metu, todel jau gali būti suteiktas istorinio automobilio statusas.
+
+Kol kas parduodamas be techninės apziuros,
+kebulo trukumai, parudijes, važiuoklėje priekyje kažkas bilda, bagazine neuzsidaro.
+
+Gal sudomintų keitimas į brangesnį automobilį su mūsų priemoka.',manufacturer_id = '1',model_id = '1',price = '1500',year = '1991',type_id = '1',user_id = '10',image = 'https://autoplius-img.dgn.lt/ann_3_205921790/honda-civic-1-5-l-hecbekas-1991-benzinas-0.jpg',active = '1',slug = 'honda-civic-1.5-l',views = '1' WHERE id="8"
+2022/02/17 21:31:44 SELECT *  FROM ads  WHERE active="1" ORDER BY views DESC  LIMIT 5
+2022/02/17 21:31:44 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:31:44 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 21:31:44 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 21:31:44 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 21:31:44 SELECT *  FROM ads  WHERE active="1" ORDER BY id DESC  LIMIT 5
+2022/02/17 21:31:44 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 21:31:44 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 21:31:44 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 21:31:44 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:31:46 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 21:31:46 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:31:46 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 21:31:46 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 21:31:46 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 21:31:47 SELECT *  FROM ads  WHERE slug="audi-80-1.9-tdi"
+2022/02/17 21:31:47 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:31:47 UPDATE ads SET title = 'Audi 80 1.9 TDI',description = 'Kuriasi, vaziuoja',manufacturer_id = '1',model_id = '1',price = '500',year = '1990',type_id = '1',user_id = '10',image = 'https://autoplius-img.dgn.lt/ann_3_211396638/audi-80-1-9-l-sedanas-1993-dyzelinas-3.jpg',active = '1',slug = 'audi-80-1.9-tdi',views = '10' WHERE id="5"
+2022/02/17 21:32:17 SELECT *  FROM ads  WHERE slug="audi-80-1.9-tdi"
+2022/02/17 21:32:17 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:32:17 UPDATE ads SET title = 'Audi 80 1.9 TDI',description = 'Kuriasi, vaziuoja',manufacturer_id = '1',model_id = '1',price = '500',year = '1990',type_id = '1',user_id = '10',image = 'https://autoplius-img.dgn.lt/ann_3_211396638/audi-80-1-9-l-sedanas-1993-dyzelinas-3.jpg',active = '1',slug = 'audi-80-1.9-tdi',views = '11' WHERE id="5"
+2022/02/17 21:32:31 SELECT *  FROM ads  WHERE active="1"
+2022/02/17 21:32:31 SELECT *  FROM ads  WHERE id="5"
+2022/02/17 21:32:31 SELECT *  FROM ads  WHERE id="6"
+2022/02/17 21:32:31 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 21:32:31 SELECT *  FROM ads  WHERE id="8"
+2022/02/17 21:32:32 SELECT *  FROM ads  WHERE slug="ford-sierra-1.8-l"
+2022/02/17 21:32:32 SELECT *  FROM ads  WHERE id="7"
+2022/02/17 21:32:32 UPDATE ads SET title = 'Ford Sierra 1.8 l',description = 'Automobilis buvo naudojamas garbaus amžiaus žmogaus tad nebuvo laužomas, sutvarkyta važiuoklė, pakeisti žvaklaidžiai, babinos. Praėjo T.A savo eiga. 3 savininkai nuo naujos. Salonas išlaikytas, kėbulas turintis paviršutinių rūdelių. Dugnas visad buvo dengtas antikorozine danga. Plačiau telefonu. Dadedu 6/8 ratus su padangom vasara.',manufacturer_id = '1',model_id = '1',price = '1000',year = '1988',type_id = '1',user_id = '10',image = 'https://autoplius-img.dgn.lt/ann_3_201421464/ford-sierra-1-8-l-hecbekas-1988-benzinas-2.jpg',active = '1',slug = 'ford-sierra-1.8-l',views = '1' WHERE id="7"
