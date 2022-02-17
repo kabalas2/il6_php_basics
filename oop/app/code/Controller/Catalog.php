@@ -9,6 +9,13 @@ use Model\Ad;
 
 class Catalog extends AbstractController
 {
+
+    public function index()
+    {
+        $this->data['ads'] = Ad::getAllAds();
+        $this->render('catalog/all');
+    }
+
     public function add()
     {
 
@@ -144,11 +151,7 @@ class Catalog extends AbstractController
         $ad->save();
     }
 
-    public function all()
-    {
-        $this->data['ads'] = Ad::getAllAds();
-        $this->render('catalog/all');
-    }
+
 
     public function show($slug)
     {

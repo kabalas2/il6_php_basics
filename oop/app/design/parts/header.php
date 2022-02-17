@@ -14,7 +14,7 @@
                 <a href="<?php echo $this->url(''); ?>">Home Page</a>
             </li>
             <li>
-                <a href="<?php echo $this->url('catalog/all') ?>">All ads</a>
+                <a href="<?php echo $this->url('catalog') ?>">All ads</a>
             </li>
             <?php if ($this->isUserLoged()): ?>
                 <li>
