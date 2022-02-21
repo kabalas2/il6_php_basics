@@ -25,9 +25,11 @@ class User extends AbstractModel
 
     private $active;
 
+    private $roleId;
+
     public function __construct()
     {
-        $this->table = 'user';
+        $this->table = 'users';
     }
 
     public function assignData()
@@ -38,7 +40,9 @@ class User extends AbstractModel
             'email' => $this->email,
             'password' => $this->password,
             'phone' => $this->phone,
-            'city_id' => $this->cityId
+            'city_id' => $this->cityId,
+            'active' => $this->active,
+            'role_id' => $this->roleId
         ];
     }
 
@@ -119,11 +123,21 @@ class User extends AbstractModel
         $this->active = $active;
     }
 
+    public function setRoleId($id)
+    {
+        $this->roleId = $id;
+    }
+
+    public function getRoleId()
+    {
+        return $this->roleId;
+    }
+
 
     public function load($id)
     {
         $db = new DBHelper();
-        $data = $db->select()->from('users')->where('id', $id)->getOne();
+        $data = $db->select()->from($this->table)->where('id', $id)->getOne();
         $this->id = $data['id'];
         $this->name = $data['name'];
         $this->lastName = $data['last_name'];
@@ -131,6 +145,8 @@ class User extends AbstractModel
         $this->email = $data['email'];
         $this->password = $data['password'];
         $this->cityId = $data['city_id'];
+        $this->active = $data['active'];
+        $this->roleId = $data['role_id'];
         $city = new City();
         $this->city = $city->load($this->cityId);
         return $this;
