@@ -121,4 +121,10 @@ class DBHelper
         return $this;
     }
 
+    public function offset($page)
+    {
+        $this->sql .= ' OFFSET '.$page.' ';
+        return $this;
+    }
+
 }

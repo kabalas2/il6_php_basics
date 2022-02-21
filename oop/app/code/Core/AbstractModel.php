@@ -58,5 +58,14 @@ class AbstractModel
         return empty($rez);
     }
 
+    public static function count($table)
+    {
+        $db = new DBHelper();
+        // SELECT count(*) FROM ads;
+        $rez= $db->select('count(*)')->from($table)->where('active',1)->get();
+        return $rez[0][0];
+
+    }
+
 
 }

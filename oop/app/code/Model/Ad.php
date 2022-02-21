@@ -252,18 +252,25 @@ class Ad extends AbstractModel
     {
         $db = new DBHelper();
         $rez = $db->select()->from($this->table)->where('slug', $slug)->getOne();
-        if(!empty($rez)){
+        if (!empty($rez)) {
             $this->load($rez['id']);
             return $this;
-        }else{
+        } else {
             return false;
         }
     }
 
-    public static function getAllAds()
+    public static function getAllAds($page = null, $limit = null)
     {
         $db = new DBHelper();
-        $data = $db->select()->from('ads')->where('active', 1)->get();
+        $db->select()->from('ads')->where('active', 1);
+        if ($limit != null) {
+            $db->limit($limit);
+        }
+        if ($page != null) {
+            $db->offset($page);
+        }
+        $data = $db->get();
         $ads = [];
         foreach ($data as $element) {
             $ad = new Ad();

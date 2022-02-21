@@ -4,6 +4,7 @@ namespace Controller;
 
 use Core\AbstractController;
 use Helper\FormHelper;
+use Helper\Logger;
 use Helper\Url;
 use Model\Ad;
 
@@ -12,7 +13,13 @@ class Catalog extends AbstractController
 
     public function index()
     {
-        $this->data['ads'] = Ad::getAllAds();
+        $this->data['count'] = Ad::count('ads');
+        $page = 0;
+        if(isset($_GET['p'])){
+            $page = (int)$_GET['p'] - 1;
+        }
+
+        $this->data['ads'] = Ad::getAllAds($page * 2, 2);
         $this->render('catalog/all');
     }
 
