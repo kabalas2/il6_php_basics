@@ -23,6 +23,7 @@ class Admin extends AbstractController
 
     public function users()
     {
-
+        $this->data['users'] = User::getAllUsers();
+        $this->renderAdmin('users/list');
     }
 }
