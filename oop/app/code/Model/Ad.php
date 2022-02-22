@@ -32,8 +32,11 @@ class Ad extends AbstractModel
 
     private $views;
 
-    public function __construct()
+    public function __construct($id = null)
     {
+        if($id !== null){
+            $this->load($id);
+        }
         $this->table = 'ads';
     }
 

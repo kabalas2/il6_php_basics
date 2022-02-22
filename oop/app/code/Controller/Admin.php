@@ -6,6 +6,7 @@ use Core\AbstractController;
 use Helper\FormHelper;
 use Helper\Url;
 use Helper\Validator;
+use Model\Ad;
 use Model\City;
 use Model\User;
 use Model\User as UserModel;
@@ -29,6 +30,12 @@ class Admin extends AbstractController
     {
         $this->data['users'] = User::getAllUsers();
         $this->renderAdmin('users/list');
+    }
+
+    public function ads()
+    {
+        $this->data['ads'] =  Ad::getAllAds();
+        $this->renderAdmin('ads/list');
     }
 
     public function useredit($id)
@@ -131,5 +138,76 @@ class Admin extends AbstractController
 
         $user->save();
         Url::redirect('admin/users');
+    }
+
+    public function adedit($id)
+    {
+        $ad = new Ad($id);
+        $form = new FormHelper('admin/adupdate', 'POST');
+        $form->input([
+            'name' => 'title',
+            'type' => 'text',
+            'placeholder' => 'Pavadinimas',
+            'value' => $ad->getTitle()
+        ]);
+
+        $form->input([
+            'name' => 'id',
+            'type' => 'hiden',
+            'value' => $ad->getId()
+
+        ]);
+
+        $form->textArea('description', $ad->getDescription());
+        $form->input([
+            'name' => 'price',
+            'type' => 'text',
+            'placeholder' => 'Kaina',
+            'value' => $ad->getPrice()
+        ]);
+        $form->input([
+            'name' => 'image',
+            'type' => 'text',
+            'placeholder' => 'Kaina',
+            'value' => $ad->getImage()
+        ]);
+        $form->input([
+            'name' => 'year',
+            'type' => 'text',
+            'placeholder' => 'Metai',
+            'value' => $ad->getYear()
+        ]);
+
+        $form->select([
+            'name' => 'active',
+            'options' => [0 => 'not active', 1 => 'active'],
+            'selected' => $ad->isActive()
+        ]);
+
+        $form->input([
+            'type' => 'submit',
+            'value' => 'sukurti',
+            'name' => 'create'
+        ]);
+
+        $this->data['form'] = $form->getForm();
+        $this->renderAdmin('ads/edit');
+    }
+
+    public function adupdate()
+    {
+        $adId = $_POST['id'];
+        $ad = new Ad($adId);
+        $ad->setTitle($_POST['title']);
+        $ad->setDescription($_POST['description']);
+        $ad->setManufacturerId(1);
+        $ad->setModelId(1);
+        $ad->setImage($_POST['image']);
+        $ad->setPrice($_POST['price']);
+        $ad->setYear($_POST['year']);
+        $ad->setTypeId(1);
+        $ad->setActive($_POST['active']);
+        $ad->save();
+        Url::redirect('admin/ads');
     }
 }
