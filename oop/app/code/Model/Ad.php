@@ -34,10 +34,10 @@ class Ad extends AbstractModel
 
     public function __construct($id = null)
     {
+        $this->table = 'ads';
         if($id !== null){
             $this->load($id);
         }
-        $this->table = 'ads';
     }
 
 

@@ -2,6 +2,7 @@
 <div class="wrapper">
     <table>
         <tr>
+            <td>#</td>
             <td>ID</td>
             <td>Title</td>
             <td>Views</td>
@@ -16,6 +17,7 @@
          */
         foreach($this->data['ads'] as $ad): ?>
         <tr>
+            <td><input type="checkbox"></td>
             <td><?= $ad->getId()?></td>
             <td><?= $ad->getTitle()?></td>
             <td><?= $ad->getViews()?></td>
