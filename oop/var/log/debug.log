@@ -1529,3 +1529,21 @@ Gal sudomintų keitimas į brangesnį automobilį su mūsų priemoka.',manufactu
 2022/02/23 19:29:16 SELECT *  FROM ads  WHERE id="6"
 2022/02/23 19:29:16 SELECT *  FROM ads  WHERE id="7"
 2022/02/23 19:29:16 SELECT *  FROM ads  WHERE id="8"
+2022/02/23 19:37:34 SELECT *  FROM users  WHERE id="10"
+2022/02/23 19:37:34 SELECT *  FROM cities  WHERE id="1"
+2022/02/23 19:37:34 SELECT *  FROM ads  WHERE id="5"
+2022/02/23 19:37:34 UPDATE ads SET title = 'Audi 80 1.9 TDI',description = 'Kuriasi, vaziuoja',manufacturer_id = '1',model_id = '1',price = '777',year = '1990',type_id = '1',user_id = '10',image = 'https://autoplius-img.dgn.lt/ann_3_211396638/audi-80-1-9-l-sedanas-1993-dyzelinas-3.jpg',active = '0',slug = 'audi-80-1.9-tdi',views = '11' WHERE id="5"
+2022/02/23 19:37:35 SELECT *  FROM ads  WHERE id="6"
+2022/02/23 19:37:35 UPDATE ads SET title = 'Opel Kadett 1.2 l kupe (coupe)',description = 'AprasymasVauhxall chevette L
+Opel kadett
+1.2 benz, originalus , H istorinis, viskas veikia
+Tech apziura iki 2024m.
+P:S: Kiti nr, be 88888
+Kaunas 3999',manufacturer_id = '1',model_id = '1',price = '4000',year = '1976',type_id = '1',user_id = '10',image = 'https://autoplius-img.dgn.lt/ann_3_168426879/opel-kadett-1-2-l-kupe-coupe-1976-benzinas-0.jpg',active = '0',slug = 'opel-kadett-1.2-l-kupe-(coupe)',views = '4' WHERE id="6"
+2022/02/23 19:38:26 SELECT *  FROM users  WHERE id="10"
+2022/02/23 19:38:26 SELECT *  FROM cities  WHERE id="1"
+2022/02/23 19:38:29 SELECT *  FROM users  WHERE id="10"
+2022/02/23 19:38:29 SELECT *  FROM cities  WHERE id="1"
+2022/02/23 19:38:29 SELECT *  FROM ads  WHERE active="1"
+2022/02/23 19:38:29 SELECT *  FROM ads  WHERE id="7"
+2022/02/23 19:38:29 SELECT *  FROM ads  WHERE id="8"

@@ -138,7 +138,7 @@ class Admin extends AbstractController
         }
 
         if ($user->getEmail() != $_POST['email']) {
-            if (Validator::checkEmail($_POST['email']) && UserModel::isValueUnic('email', $_POST['email'], 'users')) {
+            if (Validator::checkEmail($_POST['email']) && UserModel::isValueUnic('email', $_POST['email'])) {
                 $user->setEmail($_POST['email']);
             }
         }

@@ -13,7 +13,7 @@ class Catalog extends AbstractController
 
     public function index()
     {
-        $this->data['count'] = Ad::count('ads');
+        $this->data['count'] = Ad::count();
         $page = 0;
         if(isset($_GET['p'])){
             $page = (int)$_GET['p'] - 1;
@@ -67,7 +67,7 @@ class Catalog extends AbstractController
     public function create()
     {
         $slug = Url::slug($_POST['title']);
-        while (!Ad::isValueUnic('slug', $slug, 'ads')) {
+        while (!Ad::isValueUnic('slug', $slug)) {
             $slug = $slug . rand(0, 100);
         }
         $ad = new Ad();

@@ -163,7 +163,7 @@ class User extends AbstractController
         }
 
         if ($user->getEmail() != $_POST['email']) {
-            if (Validator::checkEmail($_POST['email']) && UserModel::isValueUnic('email', $_POST['email'], 'users')) {
+            if (Validator::checkEmail($_POST['email']) && UserModel::isValueUnic('email', $_POST['email'])) {
                 $user->setEmail($_POST['email']);
             }
         }
@@ -200,7 +200,7 @@ class User extends AbstractController
     {
         $passMatch = Validator::checkPassword($_POST['password'], $_POST['password2']);
         $isEmailValid = Validator::checkEmail($_POST['email']);
-        $isEmailUnic = UserModel::isValueUnic('email', $_POST['email'], 'users');
+        $isEmailUnic = UserModel::isValueUnic('email', $_POST['email']);
         if ($passMatch && $isEmailValid && $isEmailUnic) {
             $user = new UserModel();
             $user->setName($_POST['name']);
