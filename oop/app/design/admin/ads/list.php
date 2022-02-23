@@ -1,4 +1,3 @@
-
 <div class="wrapper">
     <table>
         <tr>
@@ -11,13 +10,14 @@
             <td>Price</td>
             <td>action</td>
         </tr>
+        <form action="<?= $this->url('admin/massadsupdate') ?>" method="POST">
         <?php
         /**
          * @var \Model\Ad $ad
          */
         foreach($this->data['ads'] as $ad): ?>
         <tr>
-            <td><input type="checkbox"></td>
+            <td><input type="checkbox" name="ad_id[]" value="<?= $ad->getId() ?>"></td>
             <td><?= $ad->getId()?></td>
             <td><?= $ad->getTitle()?></td>
             <td><?= $ad->getViews()?></td>
@@ -31,5 +31,15 @@
             </td>
         </tr>
         <?php endforeach; ?>
+
+
     </table>
+    <select name="action">
+        <option value="">Pasirinkite Actiona</option>
+        <option value="1">Ijungti</option>
+        <option value="0">Isjungti</option>
+        <option value="2">Delete</option>
+    </select>
+    <input type="submit" value="update">
+    </form>
 </div>
