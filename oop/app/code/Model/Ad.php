@@ -7,6 +7,7 @@ use Core\AbstractModel;
 
 class Ad extends AbstractModel
 {
+    protected const TABLE = 'ads';
 
     private $title;
 
@@ -230,9 +231,10 @@ class Ad extends AbstractModel
     public function load($id)
     {
         $db = new DBHelper();
-        $ad = $db->select()->from('ads')->where('id', $id)->getOne();
+        $ad = $db->select()->from(self::TABLE)->where('id', $id)->getOne();
         if (!empty($ad)) {
             $this->id = $ad['id'];
+            $this->title = $ad['title'];
             $this->title = $ad['title'];
             $this->manufacturerId = $ad['manufacturer_id'];
             $this->description = $ad['description'];
@@ -265,7 +267,7 @@ class Ad extends AbstractModel
     public static function getAllAds($page = null, $limit = null)
     {
         $db = new DBHelper();
-        $db->select()->from('ads')->where('active', 1);
+        $db->select()->from(self::TABLE)->where('active', 1);
         if ($limit != null) {
             $db->limit($limit);
         }
@@ -286,7 +288,7 @@ class Ad extends AbstractModel
     {
         $db = new DBHelper();
         $data = $db->select()
-            ->from('ads')
+            ->from(self::TABLE)
             ->where('active', 1)
             ->orderBy('views', 'DESC')
             ->limit($limit)
@@ -304,7 +306,7 @@ class Ad extends AbstractModel
     {
         $db = new DBHelper();
         $data = $db->select()
-            ->from('ads')
+            ->from(self::TABLE)
             ->where('active', 1)
             ->orderBy('id', 'DESC')
             ->limit($limit)

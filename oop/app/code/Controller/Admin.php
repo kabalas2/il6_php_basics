@@ -235,4 +235,9 @@ class Admin extends AbstractController
             }
         }
     }
+
+    public static function betkas()
+    {
+        echo 'bet ka';
+    }
 }
