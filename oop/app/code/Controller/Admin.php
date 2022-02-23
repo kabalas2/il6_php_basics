@@ -19,7 +19,6 @@ class Admin extends AbstractController
 
     public const DELETE = 2;
 
-
     public function __construct()
     {
         parent::__construct();
@@ -234,10 +233,5 @@ class Admin extends AbstractController
                 $ad->delete();
             }
         }
-    }
-
-    public static function betkas()
-    {
-        echo 'bet ka';
     }
 }

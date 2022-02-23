@@ -159,8 +159,6 @@ class Catalog extends AbstractController
         $ad->save();
     }
 
-
-
     public function show($slug)
     {
         $ad = new Ad();
@@ -177,7 +175,6 @@ class Catalog extends AbstractController
             $this->render('parts/errors/error404');
         }
     }
-
 
 }
 

@@ -8,8 +8,6 @@ class AbstractModel
 {
     protected $data;
 
-    protected $table;
-
     protected $id;
 
     protected const TABLE = '';
