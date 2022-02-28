@@ -2,7 +2,12 @@
 <div class="pop-skelbimas-wrap">
     <?php foreach ($this->data['populars'] as $popAd): ?>
         <div class="box">
+            <img width="300" src="<?= $popAd->getImage(); ?>">
             <?= $popAd->getTitle() ?>
+            <div class="price">
+                <?= $popAd->getPrice(); ?>
+            </div>
+
         </div>
     <?php endforeach; ?>
 </div>

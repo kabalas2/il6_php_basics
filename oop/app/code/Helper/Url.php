@@ -9,7 +9,7 @@ class Url
         header('Location: ' . BASE_URL . $route);
         exit;
     }
-
+    // admin/adedit
     public static function link($path, $parm = null)
     {
         $link = BASE_URL . $path;
