@@ -235,7 +235,6 @@ class Ad extends AbstractModel
         if (!empty($ad)) {
             $this->id = $ad['id'];
             $this->title = $ad['title'];
-            $this->title = $ad['title'];
             $this->manufacturerId = $ad['manufacturer_id'];
             $this->description = $ad['description'];
             $this->modelId = $ad['model_id'];
@@ -255,7 +254,7 @@ class Ad extends AbstractModel
     public function loadBySlug($slug)
     {
         $db = new DBHelper();
-        $rez = $db->select()->from($this->table)->where('slug', $slug)->getOne();
+        $rez = $db->select()->from(self::TABLE)->where('slug', $slug)->getOne();
         if (!empty($rez)) {
             $this->load($rez['id']);
             return $this;
