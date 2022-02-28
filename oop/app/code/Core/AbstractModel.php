@@ -38,6 +38,8 @@ class AbstractModel
     {
         $db = new DBHelper();
         $db->insert(static::TABLE, $this->data)->exec();
+
+
     }
 
     protected function assignData()
