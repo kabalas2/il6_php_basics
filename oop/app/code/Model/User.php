@@ -2,12 +2,13 @@
 
 namespace Model;
 
+use Core\Interfaces\ModelInterface;
 use Helper\DBHelper;
 use Helper\FormHelper;
 use Model\City;
 use Core\AbstractModel;
 
-class User extends AbstractModel
+class User extends AbstractModel implements ModelInterface
 {
     private $name;
 
