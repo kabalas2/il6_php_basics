@@ -166,6 +166,20 @@ class Catalog extends AbstractController implements ControllerInterface
         $newViews = (int)$ad->getViews() + 1;
         $ad->setViews($newViews);
         $ad->save();
+
+        $form = new FormHelper('catalog/commentsave', 'POST');
+        $form->input([
+            'type' => 'hidden',
+            'name' => 'ad_id',
+            'value' => $ad->getId()
+        ]);
+        $form->textArea('comment', 'Komentaras...');
+        $form->input([
+            'type' => 'submit',
+            'name' => 'ok',
+            'value' => 'Komentuok atsakingai'
+        ]);
+        $this->data['comment_form'] = $form->getForm();
         $this->data['ad'] = $ad;
         $this->data['title'] = $ad->getTitle();
         $this->data['meta_description'] = $ad->getDescription();
@@ -174,6 +188,11 @@ class Catalog extends AbstractController implements ControllerInterface
         } else {
             $this->render('parts/errors/error404');
         }
+    }
+
+    public function commentsave()
+    {
+
     }
 
 }

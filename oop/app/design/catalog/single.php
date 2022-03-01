@@ -14,4 +14,9 @@
             </p>
         </div>
     </div>
+    <div class="comments-wrapper">
+
+<!--   Cia turetu buti tikrinama ar useris prisijungias ir tada turetume rodyti sia forma     -->
+        <?= $this->data['comment_form'] ?>
+    </div>
 </div>
