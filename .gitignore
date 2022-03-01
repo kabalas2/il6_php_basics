@@ -1,6 +1,6 @@
 /.DS_Store
 /.idea
-/oop/adminer.php
+/oop/pub/adminer.php
 /oop/vendor
-/var
+/oop/var/log/
 /oop/config.php

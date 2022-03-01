@@ -3,8 +3,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 date_default_timezone_set('Europe/Vilnius');
-include 'vendor/autoload.php';
-include 'config.php';
+include '../vendor/autoload.php';
+include '../config.php';
 session_start();
 // catalog/show/audi-80
 if (isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] !== '/') {
