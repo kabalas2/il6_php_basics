@@ -45,7 +45,7 @@ class Admin extends AbstractController implements ControllerInterface
         $this->renderAdmin('ads/list');
     }
 
-    public function useredit($id)
+    public function useredit(int $id) :void
     {
         $user = new User();
         $user->load($id);

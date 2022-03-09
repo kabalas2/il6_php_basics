@@ -15,4 +15,10 @@ class Home extends AbstractController implements ControllerInterface
         $this->data['latest'] = Ad::getLatest(5);
         $this->render('parts/home');
     }
+
+    public function test()
+    {
+       $users = \Model\User::count();
+       print_r($users);
+    }
 }

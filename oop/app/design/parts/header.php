@@ -22,6 +22,9 @@
             </li>
             <?php if ($this->isUserLoged()): ?>
                 <li>
+                    <a href="<?= $this->url('message') ?>">Messages(<?= $this->data['new_messages'] ?>)</a>
+                </li>
+                <li>
                     <a href="<?php echo $this->url('catalog/add') ?>">Add New</a>
                 </li>
                 <li>

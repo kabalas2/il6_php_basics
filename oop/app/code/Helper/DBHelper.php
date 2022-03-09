@@ -6,9 +6,9 @@ use Helper\Logger;
 
 class DBHelper
 {
-    private $conn;
+    private \PDO $conn;
 
-    private $sql;
+    private string $sql;
 
     public function __construct()
     {
@@ -22,7 +22,7 @@ class DBHelper
         }
     }
 
-    public function select($fields = '*')
+    public function select(string $fields = '*') :DBHelper
     {
         $this->sql .= 'SELECT ' . $fields . ' ';
         return $this;
@@ -34,7 +34,7 @@ class DBHelper
         return $this;
     }
 
-    public function where($field, $value, $operator = '=')
+    public function where($field, $value, string $operator = '=')
     {
         $this->sql .= ' WHERE ' . $field . $operator . '"' . $value . '"';
         return $this;
@@ -58,13 +58,13 @@ class DBHelper
         return $this;
     }
 
-    public function get()
+    public function get(): ?array
     {
         $rez = $this->exec();
         return $rez->fetchAll();
     }
 
-    public function exec()
+    public function exec(): ?\PDOStatement
     {
         if(DEBUG_MODE){
             Logger::log($this->sql);

@@ -6,7 +6,7 @@ class FormHelper
 {
     private $form;
 
-    public function __construct($action, $method)
+    public function __construct(string $action, string $method)
     {
         $this->form = '<form action="'. BASE_URL . $action . '" method="' . $method . '">';
     }

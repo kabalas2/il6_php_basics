@@ -139,7 +139,7 @@ class User extends AbstractModel implements ModelInterface
     }
 
 
-    public function load($id)
+    public function load(int $id) : object
     {
         $db = new DBHelper();
         $data = $db->select()->from(self::TABLE)->where('id', $id)->getOne();

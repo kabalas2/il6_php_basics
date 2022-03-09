@@ -10,29 +10,29 @@ class Ad extends AbstractModel implements ModelInterface
 {
     protected const TABLE = 'ads';
 
-    private $title;
+    private string $title;
 
-    private $description;
+    private string $description;
 
-    private $manufacturerId;
+    private int $manufacturerId;
 
-    private $modelId;
+    private int $modelId;
 
-    private $price;
+    private float $price;
 
-    private $year;
+    private int $year;
 
-    private $typeId;
+    private int $typeId;
 
-    private $userId;
+    private int $userId;
 
-    private $image;
+    private string $image;
 
-    private $active;
+    private bool $active;
 
-    private $slug;
+    private string $slug;
 
-    private $views;
+    private int $views;
 
     public function __construct($id = null)
     {

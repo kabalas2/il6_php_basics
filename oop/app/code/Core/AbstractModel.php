@@ -42,7 +42,7 @@ class AbstractModel
 
     }
 
-    protected function assignData()
+    public function assignData()
     {
         $this->data = [];
     }

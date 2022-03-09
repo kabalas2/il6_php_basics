@@ -3,6 +3,7 @@
 namespace Core;
 
 use Helper\Url;
+use Model\Message;
 use Model\User;
 
 class AbstractController
@@ -14,6 +15,10 @@ class AbstractController
         $this->data = [];
         $this->data['title'] = 'Srotas24.lt';
         $this->data['meta_description'] = '';
+        if($this->isUserLoged()){
+            $this->data['new_messages'] = Message::getUnreadMessagesCount();
+        }
+
     }
 
     protected function render($template)
@@ -48,7 +53,7 @@ class AbstractController
         return false;
     }
 
-    public function url($path, $param = null)
+    public function url(string $path, ?string $param = null): string
     {
         return Url::link($path, $param);
     }
