@@ -94,6 +94,7 @@ footer{
 .wrapper .catalog .box a{
     text-decoration: none;
     color: #000;
+
 }
 
 .wrapper .catalog .box a .price{
@@ -141,5 +142,21 @@ header .sliding-part{
 .pop-skelbimas-wrap{
     background: #fff;
     color: #888888;
+}
+.message-box{
+    border: 1px solid #888888;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    width: 70%;
+}
+.my{
+    background: #ccff00;
+    margin-left: auto;
+}
+
+.him{
+    background: blanchedalmond;
 }
 

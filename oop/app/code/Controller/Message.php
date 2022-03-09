@@ -23,18 +23,24 @@ class Message extends AbstractController implements ControllerInterface
         $chats = [];
 
         foreach ($messages as $message) {
-//            if ($message->getSenderId() > $message->getReseiverId()) {
-//                $key = $message->getReseiverId() . '-' . $message->getSenderId();
-//            } else {
-//                $key = $message->getSenderId() . '-' . $message->getReseiverId();
-//            }
+            if ($message->getSenderId() > $message->getReseiverId()) {
+                $key = $message->getReseiverId() . '-' . $message->getSenderId();
+            } else {
+                $key = $message->getSenderId() . '-' . $message->getReseiverId();
+            }
             $chatFriendId = $message->getSenderId() == $_SESSION['user_id'] ? $message->getReseiverId() : $message->getSenderId();
             $chatFriend = new \Model\User();
             $chatFriend->load($chatFriendId);
-            $chats[$chatFriendId]['message'] = $message;
-            $chats[$chatFriendId]['chat_friend'] = $chatFriend;
+            $chats[$key]['message'] = $message;
+            $chats[$key]['chat_friend'] = $chatFriend;
         }
         $this->data['chat'] = $chats;
         $this->render('messages/all');
+    }
+
+    public function chat($chatFriendId)
+    {
+        $this->data['messages'] = MessageModel::getUserMessagesWithFriend($chatFriendId);
+        $this->render('messages/chat');
     }
 }
