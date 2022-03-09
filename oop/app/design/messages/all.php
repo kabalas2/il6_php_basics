@@ -5,7 +5,12 @@
                 <?= $chat['chat_friend']->getName() ?>
                 <?= $chat['message']->getDate() ?>
             </div>
-            <div class="last-message-body">
+            <?php $class = '';
+            if ($chat['message']->getReseiverId() == $_SESSION['user_id'] &&
+                $chat['message']->isSeen() == 0) {
+                $class = 'bolt';
+            } ?>
+            <div class="last-message-body <?= $class ?>">
                 <?= $chat['message']->getMessage() ?>
             </div>
             <div class="read-more">

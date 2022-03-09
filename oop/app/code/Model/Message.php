@@ -95,7 +95,7 @@ class Message extends AbstractModel implements ModelInterface
     /**
      * @param bool $seen
      */
-    public function setSeen(bool $seen): void
+    public function setSeen(int $seen): void
     {
         $this->seen = $seen;
     }
@@ -121,7 +121,8 @@ class Message extends AbstractModel implements ModelInterface
             'message' => $this->message,
             'sender_id' => $this->senderId,
             'reseiver_id' => $this->reseiverId,
-            'seen' => $this->seen
+            'date' => $this->date,
+            'seen' => (int)$this->seen
         ];
     }
 
@@ -158,5 +159,11 @@ class Message extends AbstractModel implements ModelInterface
             $messages[] = $message;
         }
         return $messages;
+    }
+
+    public static function makeSeen($senderId, $reseiverId)
+    {
+        $db = new DBHelper();
+        $db->update(self::TABLE, ['seen' => 1])->where('sender_id', $senderId)->andWhere('reseiver_id', $reseiverId)->andWhere('seen', 0)->exec();
     }
 }

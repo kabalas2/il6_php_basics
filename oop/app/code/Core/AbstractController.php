@@ -30,6 +30,7 @@ class AbstractController
 
     protected function renderAdmin($template)
     {
+
         include_once PROJECT_ROOT_DIR . '/app/design/admin/parts/header.php';
         include_once PROJECT_ROOT_DIR . '/app/design/admin/' . $template . '.php';
         include_once PROJECT_ROOT_DIR . '/app/design/admin/parts/footer.php';

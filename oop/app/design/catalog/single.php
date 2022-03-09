@@ -14,6 +14,11 @@
             </p>
         </div>
     </div>
+        <?php if($this->isUserLoged()): ?>
+        <a href="<?= $this->url('message/chat/'.$ad->getUserId()) ?>">
+            Rasyti zinute savininkui
+        </a>
+        <?php endif; ?>
     <div class="comments-wrapper">
 
 <!--   Cia turetu buti tikrinama ar useris prisijungias ir tada turetume rodyti sia forma     -->

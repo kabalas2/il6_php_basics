@@ -229,7 +229,7 @@ class Ad extends AbstractModel implements ModelInterface
     }
 
 
-    public function load($id)
+    public function load(int $id) :object
     {
         $db = new DBHelper();
         $ad = $db->select()->from(self::TABLE)->where('id', $id)->getOne();

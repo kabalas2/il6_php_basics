@@ -160,3 +160,17 @@ header .sliding-part{
     background: blanchedalmond;
 }
 
+.chat-box textarea{
+    width: 100%;
+}
+
+.btn.submit{
+    background: #ccff00;
+    border: 0;
+    border-radius: 0;
+}
+
+.last-message-body.bolt{
+    font-weight: bold;
+}
+
