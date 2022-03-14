@@ -164,8 +164,8 @@ class Catalog extends AbstractController implements ControllerInterface
     public function show($slug)
     {
         $ad = new Ad();
-        $ad->loadBySlug($slug);
-        if (!$ad) {
+
+        if ($ad->loadBySlug($slug) === null) {
             $this->render('parts/errors/error404');
             return;
         }

@@ -260,7 +260,7 @@ class Ad extends AbstractModel implements ModelInterface
             $this->load($rez['id']);
             return $this;
         } else {
-            return false;
+            return null;
         }
     }
 
