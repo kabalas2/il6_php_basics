@@ -15,7 +15,7 @@ class AbstractController
         $this->data = [];
         $this->data['title'] = 'Srotas24.lt';
         $this->data['meta_description'] = '';
-        if($this->isUserLoged()){
+        if ($this->isUserLoged()) {
             $this->data['new_messages'] = Message::getUnreadMessagesCount();
         }
 
@@ -23,6 +23,7 @@ class AbstractController
 
     protected function render($template)
     {
+
         include_once PROJECT_ROOT_DIR . '/app/design/parts/header.php';
         include_once PROJECT_ROOT_DIR . '/app/design/' . $template . '.php';
         include_once PROJECT_ROOT_DIR . '/app/design/parts/footer.php';

@@ -319,4 +319,9 @@ class Ad extends AbstractModel implements ModelInterface
         }
         return $ads;
     }
+
+    public function getRatingAvg()
+    {
+
+    }
 }

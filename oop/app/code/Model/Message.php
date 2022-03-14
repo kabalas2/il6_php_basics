@@ -136,10 +136,10 @@ class Message extends AbstractModel implements ModelInterface
     public static function getUserRelatedMessages()
     {
         $db = new DBHelper();
-        $userId= $_SESSION['user_id'];
+        $userId = $_SESSION['user_id'];
         $data = $db->select()->from(self::TABLE)->where('sender_id', $userId)->orWhere('reseiver_id', $userId)->get();
         $messages = [];
-        foreach ($data as $elemetn){
+        foreach ($data as $elemetn) {
             $message = new Message();
             $message->load($elemetn['id']);
             $messages[] = $message;
@@ -150,10 +150,10 @@ class Message extends AbstractModel implements ModelInterface
     public static function getUserMessagesWithFriend($friendId)
     {
         $db = new DBHelper();
-        $userId= $_SESSION['user_id'];
+        $userId = $_SESSION['user_id'];
         $data = $db->select()->from(self::TABLE)->where('sender_id', $userId)->andWhere('reseiver_id', $friendId)->orWhere('reseiver_id', $userId)->andWhere('sender_id', $friendId)->get();
         $messages = [];
-        foreach ($data as $elemetn){
+        foreach ($data as $elemetn) {
             $message = new Message();
             $message->load($elemetn['id']);
             $messages[] = $message;

@@ -8,6 +8,8 @@ use Helper\Logger;
 use Helper\Url;
 use Model\Ad;
 use Core\Interfaces\ControllerInterface;
+use Model\Rating;
+
 class Catalog extends AbstractController implements ControllerInterface
 {
 
@@ -15,7 +17,7 @@ class Catalog extends AbstractController implements ControllerInterface
     {
         $this->data['count'] = Ad::count();
         $page = 0;
-        if(isset($_GET['p'])){
+        if (isset($_GET['p'])) {
             $page = (int)$_GET['p'] - 1;
         }
 
@@ -163,6 +165,10 @@ class Catalog extends AbstractController implements ControllerInterface
     {
         $ad = new Ad();
         $ad->loadBySlug($slug);
+        if (!$ad) {
+            $this->render('parts/errors/error404');
+            return;
+        }
         $newViews = (int)$ad->getViews() + 1;
         $ad->setViews($newViews);
         $ad->save();
@@ -179,21 +185,54 @@ class Catalog extends AbstractController implements ControllerInterface
             'name' => 'ok',
             'value' => 'Komentuok atsakingai'
         ]);
+        $this->data['rated'] = false;
+        $rate = new Rating();
+        $isRateNull = $rate->loadByUserAndAd($_SESSION['user_id'], $ad->getId());
+        if ($isRateNull !== null) {
+            $this->data['rated'] = true;
+            $this->data['user_rate'] = $rate->getRating();
+        }
+
+        $ratings = Rating::getRatingsByAd($ad->getId());
+        $sum = 0;
+        foreach ($ratings as $rate) {
+            $sum += $rate['rating'];
+        }
+
+        $this->data['ad_rating'] = 0;
+        $this->data['rating_count'] = count($ratings);
+        if ($sum > 0) {
+            $this->data['ad_rating'] = $sum / $this->data['rating_count'];
+        }
+
         $this->data['comment_form'] = $form->getForm();
         $this->data['ad'] = $ad;
         $this->data['title'] = $ad->getTitle();
         $this->data['meta_description'] = $ad->getDescription();
-        if ($this->data['ad']) {
-            $this->render('catalog/single');
-        } else {
-            $this->render('parts/errors/error404');
-        }
+
+        $this->render('catalog/single');
+
+
     }
 
     public function commentsave()
     {
 
     }
+
+    public function rate()
+    {
+        $rate = new Rating();
+        $rate->loadByUserAndAd($_SESSION['user_id'], $_POST['ad_id']);
+        $rate->setUserId((int)$_SESSION['user_id']);
+        $rate->setAdId((int)$_POST['ad_id']);
+        $rate->setRating((int)$_POST['rate']);
+        $rate->save();
+        echo '<pre>';
+        print_r($_POST);
+        print_r($rate);
+    }
+
 
 }
 

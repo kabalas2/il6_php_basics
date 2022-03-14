@@ -14,14 +14,29 @@
             </p>
         </div>
     </div>
-        <?php if($this->isUserLoged()): ?>
-        <a href="<?= $this->url('message/chat/'.$ad->getUserId()) ?>">
+    <span>Skelbimo ivertinimas(<?= $this->data['rating_count'] ?>):</span>
+    <?= $this->data['ad_rating'] ?>
+    <?php if ($this->isUserLoged()): ?>
+        <a href="<?= $this->url('message/chat/' . $ad->getUserId()) ?>">
             Rasyti zinute savininkui
         </a>
-        <?php endif; ?>
-    <div class="comments-wrapper">
+        <form action="<?= $this->url('catalog/rate') ?>" method="POST">
+            <input type="hidden" name="ad_id" value="<?= $ad->getId(); ?>">
+            <?php for ($i = 1; $i <= 5; $i++): ?>
+                <input type="radio"
+                    <?php if ($this->data['rated'] && $this->data['user_rate'] == $i): ?>
+                        checked
+                    <?php endif; ?>
+                       value="<?= $i ?>" name="rate">
+            <?php endfor; ?>
+            <br>
+            <input type="submit" value="Ragte this garbage!" name="rate_submit">
+        </form>
+        <div class="comments-wrapper">
 
-<!--   Cia turetu buti tikrinama ar useris prisijungias ir tada turetume rodyti sia forma     -->
-        <?= $this->data['comment_form'] ?>
-    </div>
+            <!--   Cia turetu buti tikrinama ar useris prisijungias ir tada turetume rodyti sia forma     -->
+            <?= $this->data['comment_form'] ?>
+        </div>
+    <?php endif; ?>
+
 </div>
