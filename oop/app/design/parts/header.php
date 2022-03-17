@@ -27,6 +27,9 @@
                 <li>
                     <a href="<?php echo $this->url('catalog/add') ?>">Add New</a>
                 </li>
+            <li>
+                <a href="<?= $this->url('user/favorite') ?>">🌟</a>
+            </li>
                 <li>
                     <a href="<?php echo $this->url('user/logout') ?>">Logout</a>
                 </li>

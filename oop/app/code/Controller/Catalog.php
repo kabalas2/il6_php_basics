@@ -9,6 +9,7 @@ use Helper\Url;
 use Model\Ad;
 use Core\Interfaces\ControllerInterface;
 use Model\Rating;
+use Model\SavedAd;
 
 class Catalog extends AbstractController implements ControllerInterface
 {
@@ -204,7 +205,11 @@ class Catalog extends AbstractController implements ControllerInterface
         if ($sum > 0) {
             $this->data['ad_rating'] = $sum / $this->data['rating_count'];
         }
-
+        if ($this->isUserLoged()) {
+            $savedAd = new SavedAd();
+            $savedAd = $savedAd->loadByUserAndAd($_SESSION['user_id'], $ad->getId());
+            $this->data['saved_ad'] = $savedAd;
+        }
         $this->data['comment_form'] = $form->getForm();
         $this->data['ad'] = $ad;
         $this->data['title'] = $ad->getTitle();
@@ -233,6 +238,19 @@ class Catalog extends AbstractController implements ControllerInterface
         print_r($rate);
     }
 
-
+    public function favorite()
+    {
+        print_r($_POST);
+        $adId = $_POST['ad_id'];
+        $savedAd = new SavedAd();
+        $saved = $savedAd->loadByUserAndAd($_SESSION['user_id'], $adId);
+        if ($saved !== null) {
+            $saved->delete();
+        } else {
+            $savedAd->setAdId($adId);
+            $savedAd->setUserId($_SESSION['user_id']);
+            $savedAd->save();
+        }
+    }
 }
 

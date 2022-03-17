@@ -2,6 +2,13 @@
 <div class="wrapper">
     <div class="post-content">
         <h1><?= $ad->getTitle(); ?></h1>
+        <?php if ($this->isUserLoged()): ?>
+            <form action="<?= $this->url('catalog/favorite') ?>" method="POST">
+                <?php $label = $this->data['saved_ad'] == null ? 'Isiminti' : 'Pamirsti'; ?>
+                <input type="hidden" value="<?= $ad->getId(); ?>" name="ad_id">
+                <input type="submit" value="<?= $label ?>" name="save">
+            </form>
+        <?php endif; ?>
         <div class="image-wrapper">
             <img src="<?= $ad->getImage() ?>">
         </div>
