@@ -3,6 +3,7 @@
 namespace Controller;
 
 use Core\AbstractController;
+use Helper\CsvParser;
 use Helper\Url;
 use Model\Ad;
 
@@ -11,22 +12,8 @@ class Import extends AbstractController
     public function execute()
     {
         $csvPath = PROJECT_ROOT_DIR . '/var/import/ads.csv';
-        if (($handle = fopen($csvPath, "r")) !== FALSE) {
-            $row = 1;
-            $keys = [];
-            $adsArray = [];
-            while (($data = fgetcsv($handle, 1000)) !== FALSE) {
-                if ($row == 1) {
-                    $keys = $data;
-                } else {
-                    $adsArray[$row] = [];
-                    foreach ($data as $key => $element) {
-                        $adsArray[$row][$keys[$key]] = $element;
-                    }
-                }
-
-                $row++;
-            }
+        $adsArray = CsvParser::parseCsv($csvPath);
+        if ($adsArray !== FALSE) {
             foreach ($adsArray as $adData) {
                 $ad = new Ad();
                 $slug = Url::slug($adData['title']);
