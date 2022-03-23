@@ -1,8 +1,11 @@
 <?php
+
 namespace Helper;
 
-class CsvParser {
-    public static function parseCsv($csv){
+class CsvParser
+{
+    public static function parseCsv($csv)
+    {
         if (($handle = fopen($csv, "r")) !== FALSE) {
             $row = 1;
             $keys = [];
@@ -19,8 +22,21 @@ class CsvParser {
                 $row++;
             }
             return $adsArray;
-        }else{
+        } else {
             return false;
+        }
+    }
+
+    public static function createCsv($csv, $array)
+    {
+        $file = fopen($csv, 'a');
+        $header = [];
+        foreach ($array[0] as $key => $value) {
+            $header[] = $key;
+        }
+        fputcsv($file, $header);
+        foreach ($array as $element) {
+            fputcsv($file, $element);
         }
     }
 }
