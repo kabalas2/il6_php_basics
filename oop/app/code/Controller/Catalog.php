@@ -10,6 +10,7 @@ use Model\Ad;
 use Core\Interfaces\ControllerInterface;
 use Model\Rating;
 use Model\SavedAd;
+use Service\PriceChangeInformer\Messenger;
 
 class Catalog extends AbstractController implements ControllerInterface
 {
@@ -150,7 +151,12 @@ class Catalog extends AbstractController implements ControllerInterface
     {
         $adId = $_POST['id'];
         $ad = new Ad();
+
         $ad->load($adId);
+        if($ad->getPrice() != $_POST['price']){
+            $messenger = new Messenger();
+            $messenger->setMessages($adId);
+        }
         $ad->setTitle($_POST['title']);
         $ad->setDescription($_POST['description']);
         $ad->setManufacturerId(1);
@@ -160,6 +166,7 @@ class Catalog extends AbstractController implements ControllerInterface
         $ad->setYear($_POST['year']);
         $ad->setTypeId(1);
         $ad->save();
+
     }
 
     public function show($slug)
